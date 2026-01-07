@@ -1,170 +1,152 @@
 layout: default title: 수당헬프 개발 기술 블로그
 
-<!-- 🎨 스타일 정의 (긴급 복구 & 강제 적용) -->
+<!-- 🎨 스타일 정의 (심플 & 클린) -->
 
 <style>
-/* 1. 전체 초기화 (테마 무시) /
-body, .wrapper, .site-content, article {
-background-color: #0a0c10 !important; / 리얼 블랙 /
-background-image: radial-gradient(circle at 50% -10%, #1f232d 0%, #0a0c10 80%) !important;
-color: #e2e8f0 !important; / 기본 글자색: 밝은 회색 */
-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
-line-height: 1.6 !important;
-}
-
+/* 1. 전체 레이아웃 /
 .wrapper {
-max-width: 1200px !important;
+max-width: 900px !important; / 읽기 가장 편한 폭 */
 padding: 0 20px !important;
-margin: 0 auto !important;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
+color: #333;
+line-height: 1.7;
 }
 
-/* 2. 타이포그래피 (색상 강제) /
-h1, h2, h3, h4, strong, b {
-color: #ffffff !important; / 제목/강조는 무조건 흰색 */
-margin: 0 !important;
+/* 2. 타이포그래피 (위계질서 확립) */
+h1 {
+font-size: 34px;
+font-weight: 800;
+color: #111;
+margin-top: 60px;
+margin-bottom: 20px;
+letter-spacing: -0.5px;
 }
-
-h1 { font-size: 32px !important; margin-bottom: 20px !important; }
 
 h2.section-title {
-font-size: 26px !important;
-color: #e2c068 !important; /* 골드 포인트 */
-border-bottom: 2px solid rgba(226, 192, 104, 0.3) !important;
-padding-bottom: 15px !important;
-margin-top: 60px !important;
-margin-bottom: 30px !important;
-display: block !important;
+font-size: 26px;
+font-weight: 700;
+color: #222;
+border-bottom: 2px solid #eee; /* 깔끔한 구분선 /
+padding-bottom: 12px;
+margin-top: 70px; / 섹션 간격 넓게 */
+margin-bottom: 24px;
 }
 
 h3 {
-font-size: 20px !important;
-margin-top: 40px !important;
-margin-bottom: 15px !important;
-color: #f8fafc !important; /* 흰색에 가까운 회색 */
-display: block !important;
+font-size: 20px;
+font-weight: 600;
+color: #444;
+margin-top: 30px;
+margin-bottom: 12px;
 }
 
-p, li, span {
-color: #cbd5e1 !important; /* 본문: 연한 회색 */
-font-size: 16px !important;
+p {
+font-size: 17px;
+color: #555;
+margin-bottom: 24px;
+word-break: keep-all; /* 단어 단위 줄바꿈 */
 }
 
-/* 3. 인트로 박스 */
+/* 3. 인트로 박스 (미니멀) */
 .intro-container {
-background: rgba(255, 255, 255, 0.05) !important;
-border: 1px solid rgba(255, 255, 255, 0.1) !important;
-border-radius: 16px !important;
-padding: 40px !important;
-text-align: center !important;
-margin-bottom: 60px !important;
+background-color: #f9f9f9;
+padding: 40px;
+border-radius: 8px;
+margin-bottom: 60px;
+text-align: center;
 }
 
 .intro-title {
-background: linear-gradient(135deg, #e2c068 0%, #d4af37 100%) !important;
--webkit-background-clip: text !important;
--webkit-text-fill-color: transparent !important;
-font-size: 32px !important;
-font-weight: 800 !important;
-display: inline-block !important;
-margin-bottom: 15px !important;
+font-size: 30px;
+font-weight: 800;
+margin-bottom: 16px;
+color: #111;
 }
 
-/* 4. 서비스 카드 (그리드 복구) */
+.intro-desc {
+font-size: 18px;
+color: #666;
+margin: 0;
+}
+
+/* 4. 서비스 리스트 (깔끔한 목록형) */
 .service-list {
-display: grid !important;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-gap: 20px !important;
-list-style: none !important;
-padding: 0 !important;
-margin: 0 !important;
+list-style: none;
+padding: 0;
+margin: 0;
 }
 
 .service-item {
-background: #12151c !important;
-border: 1px solid rgba(255, 255, 255, 0.1) !important;
-border-radius: 12px !important;
-padding: 25px !important;
-margin: 0 !important;
+margin-bottom: 12px;
+padding-left: 16px;
+border-left: 3px solid #ddd; /* 왼쪽 포인트 선 */
+font-size: 17px;
 }
 
-.service-item strong {
-display: block !important;
-color: #e2c068 !important; /* 골드 */
-font-size: 18px !important;
-margin-bottom: 10px !important;
-border-bottom: 1px solid rgba(226, 192, 104, 0.2) !important;
-padding-bottom: 8px !important;
+.service-category {
+font-weight: 700;
+color: #333;
+margin-right: 8px;
 }
 
-/* 링크 (가장 중요: 안 보이는 문제 해결) /
+/* 5. 링크 스타일 (가독성 파란색) /
 a {
-color: #60a5fa !important; / 밝은 파란색 /
-text-decoration: none !important;
-font-weight: bold !important;
+color: #0366d6; / 깃허브 블루 */
+text-decoration: none;
+font-weight: 500;
 }
 a:hover {
-color: #e2c068 !important; / 호버 시 골드 */
-text-decoration: underline !important;
+text-decoration: underline;
 }
 
-/* 5. 기술 스택 박스 */
-.tech-box {
-background: #0f1115 !important;
-border: 1px solid rgba(255, 255, 255, 0.1) !important;
-border-radius: 12px !important;
-padding: 25px !important;
-margin-top: 20px !important;
+/* 6. 기술 스택 (심플 박스) */
+.tech-container {
+background: #f1f3f5;
+padding: 24px;
+border-radius: 8px;
 }
-
-.tech-item {
-margin-bottom: 15px !important;
-display: block !important;
+.tech-row {
+margin-bottom: 10px;
+font-size: 16px;
 }
-
 .tech-label {
-color: #e2c068 !important;
-font-weight: bold !important;
-font-size: 16px !important;
-display: inline-block !important;
-width: 80px !important;
+font-weight: 700;
+color: #111;
+display: inline-block;
+width: 60px;
 }
 
-.tech-content {
-display: inline !important;
-color: #e2e8f0 !important;
-}
-
-/* 6. 포스트 리스트 */
+/* 7. 글 목록 */
 .post-list {
-list-style: none !important;
-padding: 0 !important;
+list-style: none;
+padding: 0;
 }
-
 .post-item {
-padding: 15px 0 !important;
-border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-display: flex !important;
-align-items: center !important;
+padding: 12px 0;
+border-bottom: 1px solid #eee;
+font-size: 17px;
 }
-
 .post-date {
-color: #94a3b8 !important;
-font-family: monospace !important;
-margin-right: 15px !important;
-font-size: 14px !important;
+color: #888;
+font-family: monospace;
+font-size: 14px;
+margin-right: 12px;
 }
 
-.post-link {
-font-size: 18px !important;
-color: #fff !important;
+/* 모바일 대응 */
+@media (max-width: 768px) {
+.wrapper { padding: 0 16px !important; }
+h1 { font-size: 28px; }
+h2.section-title { font-size: 22px; margin-top: 50px; }
+.intro-container { padding: 24px; }
 }
 </style>
 
-<!-- 본문 내용 -->
+<!-- 본문 시작 -->
 
 <div class="intro-container">
-<h1 class="intro-title">💸 Money Flow & Code Vibe 👋</h1>
-<p style="margin: 0;">
+<div class="intro-title">💸 Money Flow & Code Vibe 👋</div>
+<p class="intro-desc">
 안녕하세요, <strong>"돈의 흐름을 추적하는 바이브 코딩"</strong>으로
 
 
@@ -187,89 +169,85 @@ color: #fff !important;
 </div>
 
 <h2 class="section-title">🗺️ Service Architecture</h2>
-<p style="text-align: center; margin-bottom: 40px; color: #cbd5e1 !important;">
-수당헬프는 단순한 계산기를 넘어, <strong>소득·지출·자산</strong>을 아우르는
+<p>
+수당헬프는 단순한 계산기를 넘어,
 
 
 
 
-3가지 핵심 축으로 구성되어 있습니다.
+<strong>소득 · 지출 · 자산</strong>을 아우르는 3가지 핵심 축으로 구성되어 있습니다.
 </p>
 
-<h3>1.  소득 & 보장 (Income & Security)</h3>
-<p style="margin-bottom: 15px;">국가에서 보장하는 권리와 혜택을 놓치지 않도록 돕습니다.</p>
+<h3>1. 💵 소득 & 보장 (Income & Security)</h3>
+<p style="margin-bottom: 10px; font-size: 16px; color: #666;">국가에서 보장하는 권리와 혜택을 놓치지 않도록 돕습니다.</p>
 <ul class="service-list">
 <li class="service-item">
-<strong>출산/육아</strong>
+<span class="service-category">출산/육아</span>
 <a href="https://sudanghelp.co.kr/parents/" target="_blank">부모급여 통합 계산기</a>, 아동수당 가이드
 </li>
 <li class="service-item">
-<strong>군인</strong>
+<span class="service-category">군인</span>
 <a href="https://sudanghelp.co.kr/military/salary/" target="_blank">2026 군인 월급/적금 계산기</a>, 공군 점수 계산
 </li>
 <li class="service-item">
-<strong>실업급여</strong>
+<span class="service-category">실업급여</span>
 <a href="https://sudanghelp.co.kr/unemployment/" target="_blank">실업급여 모의계산</a>, 가이드
 </li>
 </ul>
 
-<h3>2.  비용 & 지출 (Expense & Spending)</h3>
-<p style="margin-bottom: 15px;">새는 돈을 막고, 합리적인 소비를 지원하는 도구입니다.</p>
+<h3>2. 💸 비용 & 지출 (Expense & Spending)</h3>
+<p style="margin-bottom: 10px; font-size: 16px; color: #666;">새는 돈을 막고, 합리적인 소비를 지원하는 도구입니다.</p>
 <ul class="service-list">
 <li class="service-item">
-<strong>여행/환전</strong>
-<a href="https://sudanghelp.co.kr/travel/exchange-calculator/" target="_blank">PWA 환율 계산기</a>, 여행 가계부
+<span class="service-category">여행/환전</span>
+<a href="https://sudanghelp.co.kr/travel/exchange-calculator/" target="_blank">PWA 환율 계산기 (오프라인 지원)</a>, 여행 가계부
 </li>
 <li class="service-item">
-<strong>대출</strong>
+<span class="service-category">대출</span>
 <a href="https://sudanghelp.co.kr/creditcalc/step-loan/" target="_blank">체증식 대출 계산기</a>, 중도상환수수료 계산
 </li>
 <li class="service-item">
-<strong>세금 (VAT)</strong>
+<span class="service-category">세금(VAT)</span>
 <a href="https://sudanghelp.co.kr/additionaltax/supply-calc/" target="_blank">부가세/공급가액 계산</a>, 간이과세 체크
 </li>
 <li class="service-item">
-<strong>공과금</strong>
+<span class="service-category">공과금</span>
 <a href="https://sudanghelp.co.kr/electricity/" target="_blank">전기요금 누진세 계산기</a>
 </li>
 </ul>
 
-<h3>3.  자산 형성 (Asset Building)</h3>
-<p style="margin-bottom: 15px;">미래를 위한 자산 증식 시뮬레이션을 제공합니다.</p>
+<h3>3. 💰 자산 형성 (Asset Building)</h3>
+<p style="margin-bottom: 10px; font-size: 16px; color: #666;">미래를 위한 자산 증식 시뮬레이션을 제공합니다.</p>
 <ul class="service-list">
 <li class="service-item">
-<strong>복리</strong>
+<span class="service-category">투자 설계</span>
 <a href="https://sudanghelp.co.kr/compoundcalc/" target="_blank">복리(예금/적금) 계산기</a>, 1억 만들기 플랜
 </li>
 <li class="service-item">
-<strong>암호화폐>암호화>암>암n
+<span class="service-category">크립토</span>
 <a href="https://sudanghelp.co.kr/coinmore/" target="_blank">코인 물타기 계산기</a>
 </li>
 </ul>
 
 <h2 class="section-title">🛠️ Tech Stack</h2>
-<div class="tech-box">
-<div class="tech-item">
-<span class="tech-label">Core</span>
-<span class="tech-content">Vanilla JS, Cloudflare Workers</span>
+<div class="tech-container">
+<div class="tech-row">
+<span class="tech-label">Core</span> Vanilla JS (Performance), Cloudflare Workers
 </div>
-<div class="tech-item">
-<span class="tech-label">PWA</span>
-<span class="tech-content">Service Worker, Manifest (Offline)</span>
+<div class="tech-row">
+<span class="tech-label">PWA</span> Service Worker (Offline Support), Manifest
 </div>
-<div class="tech-item">
-<span class="tech-label">SEO</span>
-<span class="tech-content">JSON-LD, Sitemap Clustering</span>
+<div class="tech-row">
+<span class="tech-label">SEO</span> JSON-LD, Meta Tag Optimization, Sitemap
 </div>
 </div>
 
 <h2 class="section-title">📝 Latest Dev Logs</h2>
-
 <ul class="post-list">
 {% for post in site.posts %}
 <li class="post-item">
 <span class="post-date">[{{ post.date | date: "%Y-%m-%d" }}]</span>
-<a href="{{ post.url }}" class="post-link">{{ post.title }}</a>
+<a href="{{ post.url }}">{{ post.title }}</a>
 </li>
 {% endfor %}
 </ul>
