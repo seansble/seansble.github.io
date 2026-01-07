@@ -18,10 +18,20 @@ image: "https://sudanghelp.co.kr/og-image.png"
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
   }
   
-  /* 제목 여백 */
-  .post-header { margin-bottom: 60px !important; }
-  .post-title { margin-top: 20px !important; margin-bottom: 20px !important; line-height: 1.4 !important; }
-  .post-meta { margin-bottom: 40px !important; color: #666 !important; }
+  /* ★★★ 제목 여백 확장 (여기가 핵심!) ★★★ */
+  .post-header {
+    margin-bottom: 50px !important; /* 헤더 전체 아래 여백 */
+  }
+  .post-title {
+    margin-top: 30px !important;    /* 제목 위 여백 */
+    margin-bottom: 20px !important; /* 제목 아래 여백 */
+    line-height: 1.4 !important;
+  }
+  .post-meta {
+    margin-bottom: 40px !important; /* 날짜/작성자 정보와 본문 사이 여백 */
+    color: #666 !important;
+    font-size: 0.95em !important;
+  }
   
   /* 2. 본문 텍스트 */
   p, li {
@@ -33,7 +43,7 @@ image: "https://sudanghelp.co.kr/og-image.png"
 
   /* 3. 섹션 제목 스타일 (무조건 통일) */
   h2.section-title {
-    margin-top: 70px !important;
+    margin-top: 70px !important; /* 섹션 간격 더 넓게 */
     margin-bottom: 24px !important;
     font-size: 26px !important;
     font-weight: 800 !important;
@@ -205,6 +215,6 @@ document.<span class="c-yellow">addEventListener</span>(<span class="c-orange">'
          transition: transform 0.2s;
        "
     >
-       👉 수당헬프 환율 계산기 실행하기
+        수당헬프 환율 계산기 실행하기
     </a>
 </div>
