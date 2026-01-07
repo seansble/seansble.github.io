@@ -3,7 +3,6 @@ layout: post
 title: "🔍 49개국 URL 라우팅 & SEO 최적화 - 환율 계산기 개발기 (2/3)"
 date: 2026-01-08
 author: Seansble
-categories: [Tech]
 tags:
   - DevLog
   - SEO
