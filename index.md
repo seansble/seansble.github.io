@@ -170,7 +170,7 @@ color: #2563eb;
 수당헬프는 단순한 계산기를 넘어, <strong>소득·지출·자산</strong>을 아우르는 3가지 핵심 축으로 구성되어 있습니다.
 </p>
 
-<h3>1. 💵 소득 & 보장 (Income & Security)</h3>
+<h3>1.  소득 & 보장 (Income)</h3>
 <p style="color: #64748b; margin-bottom: 12px;">국가에서 보장하는 권리와 혜택을 놓치지 않도록 돕습니다.</p>
 <ul class="service-list">
 <li class="service-item"><strong>출산/육아:</strong> <a href="https://sudanghelp.co.kr/parents/" target="_blank">부모급여 통합 계산기</a>, 아동수당 가이드</li>
@@ -178,7 +178,7 @@ color: #2563eb;
 <li class="service-item"><strong>사회안전망:</strong> <a href="https://sudanghelp.co.kr/unemployment/" target="_blank">실업급여 모의계산</a>, 4대보험, 청년지원금</li>
 </ul>
 
-<h3>2. 💸 비용 & 지출 (Expense & Spending)</h3>
+<h3>2.  비용 & 지출 (Expense)</h3>
 <p style="color: #64748b; margin-bottom: 12px;">새는 돈을 막고, 합리적인 소비를 지원하는 도구입니다.</p>
 <ul class="service-list">
 <li class="service-item"><strong>여행/환전:</strong> <a href="https://sudanghelp.co.kr/travel/exchange-calculator/" target="_blank">PWA 환율 계산기 (오프라인 지원)</a>, 여행 가계부</li>
@@ -186,7 +186,7 @@ color: #2563eb;
 <li class="service-item"><strong>세금/공과금:</strong> <a href="https://sudanghelp.co.kr/additionaltax/supply-calc/" target="_blank">부가세/공급가액 계산</a>, 전기요금 누진세 측정</li>
 </ul>
 
-<h3>3. 💰 자산 형성 (Asset Building)</h3>
+<h3>3. 💰 자산 형성 (Asset)</h3>
 <p style="color: #64748b; margin-bottom: 12px;">미래를 위한 자산 증식 시뮬레이션을 제공합니다.</p>
 <ul class="service-list">
 <li class="service-item"><strong>투자 설계:</strong> <a href="https://sudanghelp.co.kr/compoundcalc/" target="_blank">복리(예금/적금) 계산기</a>, 1억 만들기 플랜</li>
