@@ -9,7 +9,7 @@ description: "베트남, 필리핀 등 여행지 통신 환경을 고려한 오�
 image: "https://sudanghelp.co.kr/og-image.png"
 ---
 
-<!-- 🎨 스타일 정의 (가독성 최적화 & 다크모드 코드) -->
+<!-- 🎨 스타일 정의 -->
 <style>
   /* 1. 전체 레이아웃 */
   .wrapper {
@@ -22,26 +22,26 @@ image: "https://sudanghelp.co.kr/og-image.png"
   p, li {
     font-size: 17px !important;
     line-height: 1.8 !important;
-    color: #333333 !important; /* 진한 회색 (가독성 좋음) */
+    color: #333333 !important;
     margin-bottom: 24px !important;
   }
 
-  /* 3. 제목 스타일 (크기 통일) */
+  /* 3. 제목 스타일 */
   h2.section-title {
     margin-top: 60px !important;
     margin-bottom: 20px !important;
     font-size: 26px !important;
     font-weight: 800 !important;
-    color: #111111 !important; /* 검정 */
+    color: #111111 !important;
     border-bottom: 2px solid #eeeeee;
     padding-bottom: 12px !important;
     line-height: 1.3 !important;
   }
 
-  /* 4. 코드 블록 (다크모드 강제 적용) */
+  /* 4. 코드 블록 (다크모드 + 쨍한 흰색 글씨) */
   pre {
-    background-color: #1e1e1e !important; /* VS Code 배경색 */
-    color: #d4d4d4 !important; /* 기본 글자색 (밝은 회색) */
+    background-color: #111111 !important; /* 완전 검정 */
+    color: #ffffff !important; /* 쨍한 흰색 */
     padding: 24px !important;
     border-radius: 8px !important;
     border: 1px solid #333333 !important;
@@ -49,19 +49,24 @@ image: "https://sudanghelp.co.kr/og-image.png"
     line-height: 1.6 !important;
     font-size: 15px !important;
     margin: 30px 0 !important;
-    overflow-x: auto; /* 가로 스크롤 */
+    overflow-x: auto;
   }
   
-  /* 코드 하이라이팅 (수동 지정) */
-  .code-keyword { color: #569cd6 !important; font-weight: bold; } /* const, function, async */
-  .code-string { color: #ce9178 !important; } /* 문자열 */
-  .code-comment { color: #6a9955 !important; } /* 주석 */
-  .code-function { color: #dcdcaa !important; } /* 함수명 */
+  /* 코드 하이라이팅 (수동 지정 - 밝은 색으로 변경) */
+  .code-keyword { color: #569cd6 !important; font-weight: bold; } 
+  .code-string { color: #ce9178 !important; } 
+  .code-comment { color: #6a9955 !important; } 
+  .code-function { color: #dcdcaa !important; } 
 
-  /* 5. 인라인 코드 (문장 중간 강조) */
+  /* ★★★ 중요: 기본 텍스트도 무조건 흰색으로 강제 ★★★ */
+  pre code, pre span {
+    color: #ffffff !important; 
+  }
+  
+  /* 5. 인라인 코드 */
   code.inline {
-    background-color: #f3f4f6 !important; /* 연한 회색 배경 */
-    color: #e11d48 !important; /* 붉은색 글자 */
+    background-color: #f3f4f6 !important;
+    color: #e11d48 !important;
     padding: 2px 6px !important;
     border-radius: 4px !important;
     font-family: monospace !important;
@@ -86,7 +91,6 @@ image: "https://sudanghelp.co.kr/og-image.png"
 
 <!-- 본문 시작 -->
 
-<!-- 인트로 박스 (심플하고 깔끔하게) -->
 <div class="intro-box">
   <h3 style="margin-top: 0; color: #111; font-size: 22px; font-weight: 700; margin-bottom: 12px;">🏝️ "계산대 앞에서 인터넷이 안 터진다면?"</h3>
   <p style="font-size: 17px; line-height: 1.7; color: #4b5563; margin: 0;">
@@ -95,7 +99,6 @@ image: "https://sudanghelp.co.kr/og-image.png"
   </p>
 </div>
 
-<!-- 섹션 1 -->
 <h2 class="section-title">📡 1. '오프라인'을 고려한 Fail-over 전략</h2>
 
 <p>
@@ -104,29 +107,28 @@ image: "https://sudanghelp.co.kr/og-image.png"
 
 <!-- 코드 블록 1 -->
 <pre><code><span class="code-comment">// calculator.js 핵심 로직</span>
-<span class="code-keyword">async function</span> <span class="code-function">loadRates</span>() {
-    <span class="code-keyword">const</span> rateInfo = document.getElementById(<span class="code-string">'rate-update-info'</span>);
+<span class="code-keyword" style="color:#569cd6!important">async function</span> <span class="code-function" style="color:#dcdcaa!important">loadRates</span>() {
+    <span class="code-keyword" style="color:#569cd6!important">const</span> rateInfo = document.getElementById(<span class="code-string" style="color:#ce9178!important">'rate-update-info'</span>);
     
-    <span class="code-keyword">try</span> {
-        <span class="code-comment">// 1. Edge Network에서 최신 환율 요청</span>
-        <span class="code-keyword">const</span> response = <span class="code-keyword">await</span> fetch(EXCHANGE_API_URL);
-        <span class="code-keyword">if</span> (!response.ok) <span class="code-keyword">throw new</span> Error(<span class="code-string">'Network Error'</span>);
+    <span class="code-keyword" style="color:#569cd6!important">try</span> {
+        <span class="code-comment" style="color:#6a9955!important">// 1. Edge Network에서 최신 환율 요청</span>
+        <span class="code-keyword" style="color:#569cd6!important">const</span> response = <span class="code-keyword" style="color:#569cd6!important">await</span> fetch(EXCHANGE_API_URL);
+        <span class="code-keyword" style="color:#569cd6!important">if</span> (!response.ok) <span class="code-keyword" style="color:#569cd6!important">throw new</span> Error(<span class="code-string" style="color:#ce9178!important">'Network Error'</span>);
         
-        <span class="code-comment">// 2. 성공 시 데이터 갱신</span>
-        <span class="code-keyword">const</span> data = <span class="code-keyword">await</span> response.json();
-        <span class="code-function">updateRates</span>(data);
+        <span class="code-comment" style="color:#6a9955!important">// 2. 성공 시 데이터 갱신</span>
+        <span class="code-keyword" style="color:#569cd6!important">const</span> data = <span class="code-keyword" style="color:#569cd6!important">await</span> response.json();
+        <span class="code-function" style="color:#dcdcaa!important">updateRates</span>(data);
         
-    } <span class="code-keyword">catch</span> (e) {
-        <span class="code-comment">// 3. 🚨 실패 시: 에러 대신 '오프라인 모드' 전환</span>
-        console.warn(<span class="code-string">'Offline Mode Activated'</span>);
+    } <span class="code-keyword" style="color:#569cd6!important">catch</span> (e) {
+        <span class="code-comment" style="color:#6a9955!important">// 3. 🚨 실패 시: 에러 대신 '오프라인 모드' 전환</span>
+        console.warn(<span class="code-string" style="color:#ce9178!important">'Offline Mode Activated'</span>);
         
-        <span class="code-comment">// 기존 LocalStorage 값을 그대로 사용하여 계산기 기능 유지</span>
-        rateInfo.textContent = <span class="code-string">'오프라인 모드 (최근 데이터)'</span>;
-        rateInfo.style.color = <span class="code-string">'#ef4444'</span>; 
+        <span class="code-comment" style="color:#6a9955!important">// 기존 LocalStorage 값을 그대로 사용하여 계산기 기능 유지</span>
+        rateInfo.textContent = <span class="code-string" style="color:#ce9178!important">'오프라인 모드 (최근 데이터)'</span>;
+        rateInfo.style.color = <span class="code-string" style="color:#ce9178!important">'#ef4444'</span>; 
     }
 }</code></pre>
 
-<!-- 팁 박스 -->
 <div style="background: #fff; border: 1px solid #ddd; border-left: 5px solid #22c55e; padding: 20px; border-radius: 4px; margin: 30px 0;">
   <strong style="color: #15803d; display: block; margin-bottom: 8px; font-size: 16px;">💡 개발 포인트</strong>
   <span style="color: #374151; font-size: 16px; line-height: 1.6;">
@@ -134,7 +136,6 @@ image: "https://sudanghelp.co.kr/og-image.png"
   </span>
 </div>
 
-<!-- 섹션 2 -->
 <h2 class="section-title">⚡ 2. 저사양 기기를 위한 DOM 캐싱</h2>
 
 <p>
@@ -142,24 +143,23 @@ image: "https://sudanghelp.co.kr/og-image.png"
 </p>
 
 <!-- 코드 블록 2 -->
-<pre><code><span class="code-comment">// DOM 요소를 메모리에 한 번만 저장 (Look-up 비용 절감)</span>
-<span class="code-keyword">const</span> DOM = {};
+<pre><code><span class="code-comment" style="color:#6a9955!important">// DOM 요소를 메모리에 한 번만 저장 (Look-up 비용 절감)</span>
+<span class="code-keyword" style="color:#569cd6!important">const</span> DOM = {};
 
-document.addEventListener(<span class="code-string">'DOMContentLoaded'</span>, () => {
-    DOM.amountValue = document.getElementById(<span class="code-string">'amount-value-input'</span>);
-    DOM.resultBox = document.getElementById(<span class="code-string">'conversion-results'</span>);
+document.addEventListener(<span class="code-string" style="color:#ce9178!important">'DOMContentLoaded'</span>, () => {
+    DOM.amountValue = document.getElementById(<span class="code-string" style="color:#ce9178!important">'amount-value-input'</span>);
+    DOM.resultBox = document.getElementById(<span class="code-string" style="color:#ce9178!important">'conversion-results'</span>);
 });
 
-<span class="code-keyword">function</span> <span class="code-function">updateDisplay</span>() {
-    <span class="code-comment">// 렌더링 시에는 메모리 주소로 즉시 접근 (No Reflow overhead)</span>
-    DOM.amountValue.textContent = <span class="code-function">formatNumber</span>(currentInput); 
+<span class="code-keyword" style="color:#569cd6!important">function</span> <span class="code-function" style="color:#dcdcaa!important">updateDisplay</span>() {
+    <span class="code-comment" style="color:#6a9955!important">// 렌더링 시에는 메모리 주소로 즉시 접근 (No Reflow overhead)</span>
+    DOM.amountValue.textContent = <span class="code-function" style="color:#dcdcaa!important">formatNumber</span>(currentInput); 
 }</code></pre>
 
 <p>
 이 최적화를 통해 <strong>갤럭시 S8급 구형 기기</strong>에서도 <strong>60fps의 부드러운 반응 속도</strong>를 확보했습니다.
 </p>
 
-<!-- 섹션 3 -->
 <h2 class="section-title">🔍 3. 국가별 SEO를 위한 URL 전략</h2>
 
 <p>
@@ -167,16 +167,16 @@ document.addEventListener(<span class="code-string">'DOMContentLoaded'</span>, (
 </p>
 
 <!-- 코드 블록 3 -->
-<pre><code><span class="code-comment">// URL path를 감지하여 해당 국가로 자동 세팅</span>
-<span class="code-keyword">const</span> COUNTRY_PRESETS = {
-    <span class="code-string">'vietnam'</span>: { from: <span class="code-string">'VND'</span>, to: <span class="code-string">'KRW'</span> },
-    <span class="code-string">'thailand'</span>: { from: <span class="code-string">'THB'</span>, to: <span class="code-string">'KRW'</span> },
-    <span class="code-comment">// ... 49개국 매핑</span>
+<pre><code><span class="code-comment" style="color:#6a9955!important">// URL path를 감지하여 해당 국가로 자동 세팅</span>
+<span class="code-keyword" style="color:#569cd6!important">const</span> COUNTRY_PRESETS = {
+    <span class="code-string" style="color:#ce9178!important">'vietnam'</span>: { from: <span class="code-string" style="color:#ce9178!important">'VND'</span>, to: <span class="code-string" style="color:#ce9178!important">'KRW'</span> },
+    <span class="code-string" style="color:#ce9178!important">'thailand'</span>: { from: <span class="code-string" style="color:#ce9178!important">'THB'</span>, to: <span class="code-string" style="color:#ce9178!important">'KRW'</span> },
+    <span class="code-comment" style="color:#6a9955!important">// ... 49개국 매핑</span>
 };</code></pre>
 
 <br>
 
-<!-- 하단 버튼 (심플하고 크게) -->
+<!-- 하단 버튼 -->
 <div style="text-align: center; margin-top: 60px; padding: 50px 20px; background: #f8fafc; border-radius: 16px; border: 1px solid #e2e8f0;">
     <h2 style="margin-top: 0 !important; border: none !important; font-size: 26px !important; margin-bottom: 12px !important; color: #111 !important;">🚀 직접 사용해보세요</h2>
     <p style="color: #64748b; margin-bottom: 30px; font-size: 17px;">
@@ -186,7 +186,7 @@ document.addEventListener(<span class="code-string">'DOMContentLoaded'</span>, (
     <a href="https://sudanghelp.co.kr/travel/exchange-calculator/" target="_blank" 
        style="
          display: inline-block;
-         background: #111; /* 검정색 버튼 (깔끔) */
+         background: #111;
          color: #fff;
          padding: 18px 36px;
          font-size: 17px;
