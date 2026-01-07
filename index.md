@@ -199,7 +199,7 @@ h2.section-title { font-size: 24px; margin-top: 60px; }
 <strong>소득 · 지출 · 자산</strong>을 아우르는 3가지 핵심 축으로 구성되어 있습니다.
 </p>
 
-<h3>1. 💵 소득 & 보장 (Income & Security)</h3>
+<h3>1.  소득 & 보장 (Income)</h3>
 <p style="margin-bottom: 15px; color: #666;">국가에서 보장하는 권리와 혜택을 놓치지 않도록 돕습니다.</p>
 <ul class="service-list">
 <li class="service-item">
@@ -216,7 +216,7 @@ h2.section-title { font-size: 24px; margin-top: 60px; }
 </li>
 </ul>
 
-<h3>2. 💸 비용 & 지출 (Expense & Spending)</h3>
+<h3>2.  비용 & 지출 (Expense)</h3>
 <p style="margin-bottom: 15px; color: #666;">새는 돈을 막고, 합리적인 소비를 지원하는 도구입니다.</p>
 <ul class="service-list">
 <li class="service-item">
@@ -237,7 +237,7 @@ h2.section-title { font-size: 24px; margin-top: 60px; }
 </li>
 </ul>
 
-<h3>3. 💰 자산 형성 (Asset Building)</h3>
+<h3>3.  자산 형성 (Asset)</h3>
 <p style="margin-bottom: 15px; color: #666;">미래를 위한 자산 증식 시뮬레이션을 제공합니다.</p>
 <ul class="service-list">
 <li class="service-item">
