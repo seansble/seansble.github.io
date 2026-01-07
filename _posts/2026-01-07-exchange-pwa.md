@@ -18,7 +18,21 @@ image: "https://sudanghelp.co.kr/og-image.png"
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
   }
   
-  /* 2. 본문 텍스트 (일반) */
+  /* ★★★ 제목 여백 확장 ★★★ */
+  .post-header {
+    margin-bottom: 60px !important; /* 제목 아래 여백 대폭 추가 */
+  }
+  .post-title {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    line-height: 1.4 !important;
+  }
+  .post-meta {
+    margin-bottom: 40px !important; /* 날짜/작성자 정보 아래 여백 */
+    color: #666 !important;
+  }
+  
+  /* 2. 본문 텍스트 */
   p, li {
     font-size: 17px !important;
     line-height: 1.8 !important;
@@ -26,10 +40,10 @@ image: "https://sudanghelp.co.kr/og-image.png"
     margin-bottom: 24px !important;
   }
 
-  /* 3. 제목 스타일 */
+  /* 3. 섹션 제목 스타일 */
   h2.section-title {
-    margin-top: 60px !important;
-    margin-bottom: 20px !important;
+    margin-top: 70px !important; /* 섹션 간격 더 넓게 */
+    margin-bottom: 24px !important;
     font-size: 26px !important;
     font-weight: 800 !important;
     color: #111111 !important;
@@ -38,10 +52,10 @@ image: "https://sudanghelp.co.kr/og-image.png"
     line-height: 1.3 !important;
   }
 
-  /* 4. 코드 블록 (다크모드 + 쨍한 흰색 글씨) */
+  /* 4. 코드 블록 (다크모드 + 쨍한 흰색) */
   pre {
-    background-color: #111111 !important; /* 완전 검정 */
-    color: #ffffff !important; /* 쨍한 흰색 */
+    background-color: #111111 !important;
+    color: #ffffff !important;
     padding: 24px !important;
     border-radius: 8px !important;
     border: 1px solid #333333 !important;
@@ -52,16 +66,12 @@ image: "https://sudanghelp.co.kr/og-image.png"
     overflow-x: auto;
   }
   
-  /* 코드 하이라이팅 (수동 지정 - 밝은 색으로 변경) */
+  /* 코드 하이라이팅 & 텍스트 강제 흰색 */
   .code-keyword { color: #569cd6 !important; font-weight: bold; } 
   .code-string { color: #ce9178 !important; } 
   .code-comment { color: #6a9955 !important; } 
   .code-function { color: #dcdcaa !important; } 
-
-  /* ★★★ 중요: 기본 텍스트도 무조건 흰색으로 강제 ★★★ */
-  pre code, pre span {
-    color: #ffffff !important; 
-  }
+  pre code, pre span { color: #ffffff !important; }
   
   /* 5. 인라인 코드 */
   code.inline {
@@ -85,7 +95,7 @@ image: "https://sudanghelp.co.kr/og-image.png"
     border: 1px solid #e5e7eb;
     border-radius: 12px;
     padding: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 60px; /* 인트로 아래 여백도 넉넉하게 */
   }
 </style>
 
@@ -195,6 +205,6 @@ document.addEventListener(<span class="code-string" style="color:#ce9178!importa
          transition: transform 0.2s;
        "
     >
-       수당헬프 환율 계산기 실행하기
+       👉 수당헬프 환율 계산기 실행하기
     </a>
 </div>
