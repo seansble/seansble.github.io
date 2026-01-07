@@ -6,6 +6,7 @@ baseurl: ""
 url: "https://seansble.github.io"
 twitter_username: seansble
 github_username: seansble
+future: true
 
 # Build settings
 # 🚨 중요: theme 이름을 정확히 적어야 합니다.
