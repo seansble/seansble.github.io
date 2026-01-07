@@ -1,0 +1,14 @@
+title: Seansble Dev Log
+email: seansble@example.com
+description: >-
+  FinTech & PWA Tech Blog. 바이브 코딩을 통해 돈의 흐름을 추적하는 서비스를 만드는 '수당헬프(SudangHelp)' 개발 기술 블로그.
+baseurl: ""
+url: "https://seansble.github.io"
+twitter_username: seansble
+github_username: seansble
+
+# Build settings
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
