@@ -3,7 +3,6 @@ layout: post
 title: "🔒 XSS 방지 & 성능 튜닝 - 환율 계산기 개발기 (3/3)"
 date: 2026-01-09
 author: Seansble
-categories: [Tech]
 tags:
   - DevLog
   - Security
