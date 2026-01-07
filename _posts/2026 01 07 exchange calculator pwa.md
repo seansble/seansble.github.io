@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "✈️ 여행지 로밍이 끊겨도 OK? PWA 환율 계산기 개발기"
+title: "✈️ 여행지 로밍이 끊겨도 OK! PWA 환율 계산기 개발기 (1/3)"
 date: 2026-01-07
 author: Seansble
 categories: [Tech]
@@ -9,23 +9,19 @@ tags:
   - PWA
   - Performance
   - JavaScript
-  - Cloudflare
-  - SEO
+  - Service-Worker
 description: "베트남, 필리핀 등 여행지 통신 환경을 고려한 오프라인 퍼스트(Offline-First) 환율 계산기 개발 경험을 공유합니다."
 image: "https://sudanghelp.co.kr/og-image.png"
 ---
 
 <style>
 /* ===== 포스트 전용 가독성 스타일 ===== */
-
-/* 본문 컨테이너 */
 .post-content-custom {
   max-width: 860px;
   margin: 0 auto;
   font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", sans-serif;
 }
 
-/* 본문 텍스트 */
 .post-content-custom p {
   font-size: 17px !important;
   line-height: 1.9 !important;
@@ -34,7 +30,6 @@ image: "https://sudanghelp.co.kr/og-image.png"
   word-break: keep-all;
 }
 
-/* 링크 */
 .post-content-custom a {
   color: #2563eb !important;
   text-decoration: none !important;
@@ -45,6 +40,69 @@ image: "https://sudanghelp.co.kr/og-image.png"
 
 .post-content-custom a:hover {
   border-bottom-color: #2563eb;
+}
+
+/* 시리즈 네비게이션 */
+.series-nav {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 40px;
+}
+
+.series-nav-title {
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.series-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.series-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #cbd5e1;
+  text-decoration: none !important;
+  transition: all 0.2s;
+}
+
+.series-nav-item:hover {
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+}
+
+.series-nav-item.current {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+.series-nav-item .num {
+  background: rgba(255,255,255,0.1);
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.series-nav-item.current .num {
+  background: #3b82f6;
+  color: #fff;
 }
 
 /* 인트로 박스 */
@@ -180,40 +238,75 @@ image: "https://sudanghelp.co.kr/og-image.png"
   border-bottom: none !important;
 }
 
-/* 강조 텍스트 */
-.post-content-custom strong {
-  color: #1e293b;
+/* 다음 글 네비게이션 */
+.next-post-nav {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.next-post-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px 24px;
+  text-decoration: none !important;
+  transition: all 0.2s;
+}
+
+.next-post-link:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.next-post-label {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.next-post-title {
+  font-size: 16px;
   font-weight: 700;
+  color: #1e293b !important;
+}
+
+.next-post-arrow {
+  font-size: 24px;
+  color: #3b82f6;
 }
 
 /* 모바일 대응 */
 @media (max-width: 768px) {
-  .post-content-custom p {
-    font-size: 16px !important;
-  }
-  
-  .section-title {
-    font-size: 20px !important;
-    margin-top: 40px !important;
-  }
-  
-  .code-block {
-    padding: 18px 16px !important;
-    font-size: 13px !important;
-    border-radius: 8px !important;
-  }
-  
-  .intro-box {
-    padding: 22px 20px;
-  }
-  
-  .cta-section {
-    padding: 32px 24px;
-  }
+  .post-content-custom p { font-size: 16px !important; }
+  .section-title { font-size: 20px !important; margin-top: 40px !important; }
+  .code-block { padding: 18px 16px !important; font-size: 13px !important; border-radius: 8px !important; }
+  .intro-box { padding: 22px 20px; }
+  .cta-section { padding: 32px 24px; }
+  .series-nav { padding: 16px 18px; }
 }
 </style>
 
 <div class="post-content-custom" markdown="0">
+
+<!-- 시리즈 네비게이션 -->
+<nav class="series-nav">
+  <div class="series-nav-title">📚 환율 계산기 개발기 시리즈</div>
+  <div class="series-nav-list">
+    <span class="series-nav-item current">
+      <span class="num">1</span> 오프라인 퍼스트 & PWA 전략
+    </span>
+    <a href="{{ '/2026/01/08/exchange-calculator-seo' | relative_url }}" class="series-nav-item">
+      <span class="num">2</span> 49개국 URL 라우팅 & SEO 최적화
+    </a>
+    <a href="{{ '/2026/01/09/exchange-calculator-security' | relative_url }}" class="series-nav-item">
+      <span class="num">3</span> 보안 강화 & 성능 튜닝
+    </a>
+  </div>
+</nav>
 
 <!-- 인트로 -->
 <div class="intro-box">
@@ -232,74 +325,104 @@ image: "https://sudanghelp.co.kr/og-image.png"
   API 호출이 실패했을 때 에러를 띄우는 대신, 캐싱된 데이터를 보여주는 로직을 구현했습니다.
 </p>
 
-<pre class="code-block"><code><span class="hl-comment">// calculator.js 핵심 로직</span>
+<pre class="code-block"><code><span class="hl-comment">// calculator.js - Fail-over 핵심 로직</span>
+<span class="hl-keyword">const</span> EXCHANGE_API_URL = <span class="hl-string">'https://sudanghelp-rates.workers.dev'</span>;
+
 <span class="hl-keyword">async function</span> <span class="hl-function">loadRates</span>() {
     <span class="hl-keyword">const</span> rateInfo = document.<span class="hl-method">getElementById</span>(<span class="hl-string">'rate-update-info'</span>);
     
     <span class="hl-keyword">try</span> {
-        <span class="hl-comment">// 1. Edge Network에서 최신 환율 요청</span>
+        <span class="hl-comment">// 1. Cloudflare Edge에서 최신 환율 요청</span>
         <span class="hl-keyword">const</span> response = <span class="hl-keyword">await</span> <span class="hl-function">fetch</span>(EXCHANGE_API_URL);
         <span class="hl-keyword">if</span> (!response.ok) <span class="hl-keyword">throw new</span> <span class="hl-function">Error</span>(<span class="hl-string">'Network Error'</span>);
         
-        <span class="hl-comment">// 2. 성공 시 데이터 갱신</span>
+        <span class="hl-comment">// 2. 성공 시 LocalStorage에 백업 저장</span>
         <span class="hl-keyword">const</span> data = <span class="hl-keyword">await</span> response.<span class="hl-method">json</span>();
+        <span class="hl-function">saveToStorage</span>(<span class="hl-string">'cachedRates'</span>, data);
         <span class="hl-function">updateRates</span>(data);
         
     } <span class="hl-keyword">catch</span> (e) {
         <span class="hl-comment">// 3. 🚨 실패 시: 에러 대신 '오프라인 모드' 전환</span>
         console.<span class="hl-method">warn</span>(<span class="hl-string">'Offline Mode Activated'</span>);
         
-        <span class="hl-comment">// 기존 LocalStorage 값을 그대로 사용</span>
+        <span class="hl-comment">// 캐싱된 환율로 계산기 기능 유지</span>
+        <span class="hl-keyword">const</span> cached = <span class="hl-function">loadFromStorage</span>(<span class="hl-string">'cachedRates'</span>);
+        <span class="hl-keyword">if</span> (cached) <span class="hl-function">updateRates</span>(cached);
+        
         rateInfo.<span class="hl-property">textContent</span> = <span class="hl-string">'오프라인 모드 (최근 데이터)'</span>;
         rateInfo.<span class="hl-property">style</span>.<span class="hl-property">color</span> = <span class="hl-string">'#ef4444'</span>; 
     }
 }</code></pre>
 
 <div class="tip-box">
-  <p><strong>💡 개발 포인트:</strong> <code>catch</code> 블록에서 에러를 중단시키지 않고, 사용자에게 "오프라인 모드"임을 인지시키는 UX로 전환하여 앱의 연속성을 보장했습니다.</p>
+  <p><strong>💡 핵심 포인트:</strong> <code>catch</code> 블록에서 에러를 중단시키지 않고 LocalStorage 캐시로 폴백합니다. 사용자는 "오프라인 모드"임을 인지하면서도 계산기를 정상 사용할 수 있습니다.</p>
 </div>
 
 <!-- 섹션 2 -->
-<h2 class="section-title">⚡ 2. 저사양 기기를 위한 DOM 캐싱</h2>
+<h2 class="section-title">⚡ 2. Service Worker 캐싱 전략</h2>
 
 <p>
-  키패드를 누를 때마다 화면이 갱신되어야 하는데, 매번 <code>document.getElementById</code>를 호출하면 
-  구형 기기에서 버벅거림(Jank)이 발생합니다. 이를 <strong>DOM Reference Caching</strong>으로 해결했습니다.
+  PWA의 핵심은 <strong>Service Worker</strong>입니다. 정적 자산은 캐시 우선(Cache-First), HTML은 네트워크 우선(Network-First) 전략을 사용했습니다.
 </p>
 
-<pre class="code-block"><code><span class="hl-comment">// DOM 요소를 메모리에 한 번만 저장 (Look-up 비용 절감)</span>
-<span class="hl-keyword">const</span> DOM = {};
+<pre class="code-block"><code><span class="hl-comment">// sw.js - 하이브리드 캐싱 전략</span>
+<span class="hl-keyword">const</span> CACHE_NAME = <span class="hl-string">'travel-helper-v4'</span>;
 
-document.<span class="hl-method">addEventListener</span>(<span class="hl-string">'DOMContentLoaded'</span>, () => {
-    DOM.<span class="hl-property">amountValue</span> = document.<span class="hl-method">getElementById</span>(<span class="hl-string">'amount-value-input'</span>);
-    DOM.<span class="hl-property">resultBox</span> = document.<span class="hl-method">getElementById</span>(<span class="hl-string">'conversion-results'</span>);
-});
+<span class="hl-comment">// 정적 자산: Cache-First (빠른 로딩)</span>
+<span class="hl-keyword">async function</span> <span class="hl-function">cacheFirst</span>(request) {
+    <span class="hl-keyword">const</span> cached = <span class="hl-keyword">await</span> caches.<span class="hl-method">match</span>(request);
+    <span class="hl-keyword">if</span> (cached) {
+        <span class="hl-function">updateCache</span>(request); <span class="hl-comment">// 백그라운드 갱신</span>
+        <span class="hl-keyword">return</span> cached;
+    }
+    <span class="hl-keyword">return</span> <span class="hl-function">fetch</span>(request);
+}
 
-<span class="hl-keyword">function</span> <span class="hl-function">updateDisplay</span>() {
-    <span class="hl-comment">// 렌더링 시에는 메모리 주소로 즉시 접근</span>
-    DOM.<span class="hl-property">amountValue</span>.<span class="hl-property">textContent</span> = <span class="hl-function">formatNumber</span>(currentInput); 
+<span class="hl-comment">// HTML: Network-First (최신 콘텐츠 보장)</span>
+<span class="hl-keyword">async function</span> <span class="hl-function">networkFirst</span>(request) {
+    <span class="hl-keyword">try</span> {
+        <span class="hl-keyword">const</span> response = <span class="hl-keyword">await</span> <span class="hl-function">fetch</span>(request);
+        <span class="hl-keyword">const</span> cache = <span class="hl-keyword">await</span> caches.<span class="hl-method">open</span>(CACHE_NAME);
+        cache.<span class="hl-method">put</span>(request, response.<span class="hl-method">clone</span>());
+        <span class="hl-keyword">return</span> response;
+    } <span class="hl-keyword">catch</span> {
+        <span class="hl-comment">// 오프라인 → 캐시 또는 오프라인 페이지</span>
+        <span class="hl-keyword">return</span> caches.<span class="hl-method">match</span>(request) || 
+               caches.<span class="hl-method">match</span>(<span class="hl-string">'/travel/offline.html'</span>);
+    }
 }</code></pre>
 
-<p>
-  이 최적화를 통해 <strong>갤럭시 S8급 구형 기기에서도 60fps</strong>의 부드러운 반응 속도를 확보했습니다.
-</p>
-
 <!-- 섹션 3 -->
-<h2 class="section-title">🔍 3. 국가별 SEO를 위한 URL 전략</h2>
+<h2 class="section-title">📱 3. PWA 설치 UX (홈 화면 추가)</h2>
 
 <p>
-  사용자는 "환율 계산기"보다 <strong>"베트남 돈 계산"</strong>처럼 구체적으로 검색합니다. 
-  이를 잡기 위해 URL 라우팅을 자동화했습니다.
+  <code>beforeinstallprompt</code> 이벤트를 캐치해서 커스텀 설치 버튼을 만들었습니다. iOS는 네이티브 프롬프트가 없어서 Toast로 안내합니다.
 </p>
 
-<pre class="code-block"><code><span class="hl-comment">// URL path를 감지하여 해당 국가로 자동 세팅</span>
-<span class="hl-keyword">const</span> COUNTRY_PRESETS = {
-    <span class="hl-string">'vietnam'</span>:   { <span class="hl-property">from</span>: <span class="hl-string">'VND'</span>, <span class="hl-property">to</span>: <span class="hl-string">'KRW'</span> },
-    <span class="hl-string">'thailand'</span>:  { <span class="hl-property">from</span>: <span class="hl-string">'THB'</span>, <span class="hl-property">to</span>: <span class="hl-string">'KRW'</span> },
-    <span class="hl-string">'japan'</span>:     { <span class="hl-property">from</span>: <span class="hl-string">'JPY'</span>, <span class="hl-property">to</span>: <span class="hl-string">'KRW'</span> },
-    <span class="hl-string">'usa'</span>:       { <span class="hl-property">from</span>: <span class="hl-string">'USD'</span>, <span class="hl-property">to</span>: <span class="hl-string">'KRW'</span> },
-    <span class="hl-comment">// ... 49개국 매핑</span>
-};</code></pre>
+<pre class="code-block"><code><span class="hl-comment">// PWA 설치 버튼 로직</span>
+<span class="hl-keyword">let</span> deferredPrompt = <span class="hl-keyword">null</span>;
+<span class="hl-keyword">const</span> isIOS = <span class="hl-string">/iPad|iPhone|iPod/</span>.<span class="hl-method">test</span>(navigator.userAgent);
+
+window.<span class="hl-method">addEventListener</span>(<span class="hl-string">'beforeinstallprompt'</span>, (e) => {
+    e.<span class="hl-method">preventDefault</span>();
+    deferredPrompt = e; <span class="hl-comment">// 나중에 사용</span>
+});
+
+pwaInstallBtn.<span class="hl-method">addEventListener</span>(<span class="hl-string">'click'</span>, <span class="hl-keyword">async</span> () => {
+    <span class="hl-keyword">if</span> (deferredPrompt) {
+        <span class="hl-comment">// Android/Chrome: 네이티브 프롬프트</span>
+        deferredPrompt.<span class="hl-method">prompt</span>();
+        <span class="hl-keyword">const</span> { outcome } = <span class="hl-keyword">await</span> deferredPrompt.userChoice;
+        deferredPrompt = <span class="hl-keyword">null</span>;
+    } <span class="hl-keyword">else if</span> (isIOS) {
+        <span class="hl-comment">// iOS: 수동 안내</span>
+        <span class="hl-function">showToast</span>(<span class="hl-string">'공유 버튼(□↑) → 홈 화면에 추가'</span>);
+    }
+});</code></pre>
+
+<div class="tip-box">
+  <p><strong>💡 iOS 대응:</strong> iOS Safari는 PWA 설치 프롬프트를 지원하지 않습니다. 사용자에게 "공유 → 홈 화면에 추가" 경로를 Toast로 안내해야 합니다.</p>
+</div>
 
 <!-- CTA -->
 <div class="cta-section">
@@ -312,5 +435,16 @@ document.<span class="hl-method">addEventListener</span>(<span class="hl-string"
     수당헬프 환율 계산기 실행하기 →
   </a>
 </div>
+
+<!-- 다음 글 -->
+<nav class="next-post-nav">
+  <a href="{{ '/2026/01/08/exchange-calculator-seo' | relative_url }}" class="next-post-link">
+    <div>
+      <div class="next-post-label">다음 글 (2/3)</div>
+      <div class="next-post-title">🔍 49개국 URL 라우팅 & SEO 최적화</div>
+    </div>
+    <span class="next-post-arrow">→</span>
+  </a>
+</nav>
 
 </div>
