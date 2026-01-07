@@ -62,7 +62,7 @@ image: "https://sudanghelp.co.kr/og-image.png"
   /* 코드 내부 텍스트 강제 흰색 (기본값) */
   pre.code-box code, 
   pre.code-box span {
-    color: #ffffff; 
+    color: #ffffff !important; 
   }
 
   /* 수동 하이라이팅 (형광색 포인트) */
@@ -205,6 +205,6 @@ document.<span class="c-yellow">addEventListener</span>(<span class="c-orange">'
          transition: transform 0.2s;
        "
     >
-        수당헬프 환율 계산기 실행하기
+       👉 수당헬프 환율 계산기 실행하기
     </a>
 </div>
