@@ -10,48 +10,75 @@ image: "https://sudanghelp.co.kr/og-image.png"
 ---
 
 <style>
-  /* 코드 블록 다크모드 (VS Code 스타일) */
-  pre {
-    background-color: #1e1e1e !important; /* 진한 회색 배경 */
-    color: #d4d4d4 !important; /* 연한 회색 글자 */
-    padding: 20px !important;
-    border-radius: 8px !important;
-    overflow-x: auto !important;
-    border: 1px solid #333 !important;
-    font-family: 'Consolas', 'Monaco', monospace !important;
-    line-height: 1.5 !important;
-    margin: 20px 0 !important;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3) !important;
+  /* 1. 전체 레이아웃 */
+  .wrapper {
+    max-width: 920px !important;
+    padding: 0 20px !important;
   }
   
-  /* 인라인 코드 (문장 중간에 있는거) */
-  p code, li code {
-    background-color: #ffe4e6 !important; /* 살짝 붉은 배경 */
-    color: #be123c !important; /* 붉은 글자 */
-    padding: 2px 6px !important;
-    border-radius: 4px !important;
-    font-size: 0.9em !important;
-    font-weight: bold !important;
+  /* 2. 섹션 제목 (무조건 통일됨) */
+  h2.post-section-title {
+    margin-top: 60px !important;
+    margin-bottom: 24px !important;
+    font-size: 26px !important;
+    font-weight: 800 !important;
+    color: #111827 !important;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 12px !important;
+    line-height: 1.3 !important;
+  }
+  
+  /* 3. 본문 텍스트 */
+  p.post-text {
+    font-size: 17px !important;
+    line-height: 1.8 !important;
+    color: #374151 !important;
+    margin-bottom: 24px !important;
   }
 
-  /* 링크 스타일 */
-  a { text-decoration: none; }
+  /* 4. 코드 블록 (다크모드) */
+  pre {
+    background-color: #1e1e1e !important;
+    color: #d4d4d4 !important;
+    padding: 24px !important;
+    border-radius: 12px !important;
+    border: 1px solid #333 !important;
+    font-family: 'Consolas', 'Monaco', monospace !important;
+    line-height: 1.6 !important;
+    margin: 30px 0 !important;
+    font-size: 14px !important;
+    overflow-x: auto;
+  }
+  
+  /* 5. 인라인 코드 강조 */
+  code.highlight-text {
+    background-color: #f3f4f6 !important;
+    color: #dc2626 !important;
+    padding: 3px 6px !important;
+    border-radius: 4px !important;
+    font-family: monospace !important;
+    font-weight: 600 !important;
+    font-size: 0.95em !important;
+    border: 1px solid #e5e7eb !important;
+  }
+
+  /* 링크 */
+  a { text-decoration: none; transition: color 0.2s; }
+  a:hover { text-decoration: underline; }
 </style>
 
-<div style="background: #f8fafc; padding: 25px; border-radius: 12px; border-left: 6px solid #3b82f6; color: #334155; margin-bottom: 40px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-  <h3 style="margin-top: 0; color: #0f172a;">🏝️ "계산대 앞에서 인터넷이 안 터진다면?"</h3>
-  <p style="font-size: 1.05em; line-height: 1.7; margin-bottom: 0;">
+<div style="background: #f0f9ff; padding: 32px; border-radius: 16px; border: 1px solid #bae6fd; margin-bottom: 50px;">
+  <h3 style="margin-top: 0; color: #0369a1; font-size: 20px; font-weight: 700; margin-bottom: 12px;">🏝️ "계산대 앞에서 인터넷이 안 터진다면?"</h3>
+  <p style="font-size: 16px; line-height: 1.7; color: #0c4a6e; margin: 0;">
     해외여행 중 가장 당황스러운 순간은 환율 계산기 앱이 로딩되다가 멈출 때입니다.<br>
-    저는 이 문제를 해결하기 위해 <strong><a href="https://sudanghelp.co.kr/travel/exchange-calculator/" target="_blank" style="color: #2563eb; font-weight: 800; border-bottom: 2px solid #2563eb;">[수당헬프 환율 계산기]</a></strong>를 개발하며 <strong>"비행기 모드에서도 0.1초 만에 실행되는 웹"</strong>을 목표로 잡았습니다.
+    저는 이 문제를 해결하기 위해 <strong><a href="https://sudanghelp.co.kr/travel/exchange-calculator/" target="_blank" style="color: #0284c7; font-weight: 800; border-bottom: 2px solid #0284c7;">[수당헬프 환율 계산기]</a></strong>를 개발하며 <strong>"비행기 모드에서도 0.1초 만에 실행되는 웹"</strong>을 목표로 잡았습니다.
   </p>
 </div>
 
----
+<h2 class="post-section-title">📡 1. '오프라인'을 고려한 Fail-over 전략</h2>
 
-## 📡 1. '오프라인'을 고려한 Fail-over 전략
-
-<p style="font-size: 1.1em; line-height: 1.8; color: #475569;">
-환율 데이터는 실시간성이 중요하지만, 여행지에서는 <strong>'가용성(Availability)'</strong>이 더 중요합니다. API 호출이 실패했을 때 에러를 띄우는 대신, <strong>캐싱된 데이터</strong>를 보여주는 로직을 구현했습니다.
+<p class="post-text">
+환율 데이터는 실시간성이 중요하지만, 여행지에서는 <code class="highlight-text">'가용성(Availability)'</code>이 더 중요합니다. API 호출이 실패했을 때 에러를 띄우는 대신, <strong>캐싱된 데이터</strong>를 보여주는 로직을 구현했습니다.
 </p>
 
 ```javascript
@@ -77,13 +104,11 @@ async function loadRates() {
         rateInfo.style.color = '#ef4444'; 
     }
 }
-<div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; padding: 15px 20px; margin: 20px 0;"> <strong style="color: #059669;">💡 개발 포인트</strong>
+<div style="background: #fdf2f8; border-left: 5px solid #db2777; padding: 20px; border-radius: 4px; margin: 30px 0;"> <strong style="color: #be185d; display: block; margin-bottom: 8px; font-size: 16px;">💡 개발 포인트</strong> <span style="color: #831843; font-size: 15px; line-height: 1.6;"> <code class="highlight-text">catch</code> 블록에서 에러를 중단시키지 않고, <strong>사용자에게 "오프라인 모드"임을 인지시키는 UX</strong>로 전환하여 앱의 연속성을 보장했습니다. </span> </div>
 
+<h2 class="post-section-title">⚡ 2. 저사양 기기를 위한 DOM 캐싱</h2>
 
-<span style="color: #065f46; font-size: 0.95em;"> <code>catch</code> 블록에서 에러를 중단시키지 않고, <strong>사용자에게 "오프라인 모드"임을 인지시키는 UX</strong>로 전환하여 앱의 연속성을 보장했습니다. </span> </div>
-
-⚡ 2. 저사양 기기를 위한 DOM 캐싱
-<p style="font-size: 1.1em; line-height: 1.8; color: #475569;"> 키패드를 누를 때마다 화면이 갱신되어야 하는데, 매번 <code>document.getElementById</code>를 호출하면 구형 기기에서 <strong>버벅거림(Jank)</strong>이 발생합니다. 이를 <strong>DOM Reference Caching</strong>으로 해결했습니다. </p>
+<p class="post-text"> 키패드를 누를 때마다 화면이 갱신되어야 하는데, 매번 <code class="highlight-text">document.getElementById</code>를 호출하면 구형 기기에서 <strong>버벅거림(Jank)</strong>이 발생합니다. 이를 <strong>DOM Reference Caching</strong>으로 해결했습니다. </p>
 
 JavaScript
 
@@ -99,10 +124,11 @@ function updateDisplay() {
     // 렌더링 시에는 메모리 주소로 즉시 접근 (No Reflow overhead)
     DOM.amountValue.textContent = formatNumber(currentInput); 
 }
-<p style="background: #fffbeb; padding: 10px 15px; border-left: 4px solid #f59e0b; color: #92400e; border-radius: 4px;"> 🚀 <strong>Result:</strong> 갤럭시 S8급 구형 기기에서도 <strong>60fps의 부드러운 반응 속도</strong>를 확보했습니다. </p>
+<p class="post-text"> 이 최적화를 통해 <strong>갤럭시 S8급 구형 기기</strong>에서도 <strong>60fps의 부드러운 반응 속도</strong>를 확보했습니다. </p>
 
-🔍 3. 국가별 SEO를 위한 URL 전략
-<p style="font-size: 1.1em; line-height: 1.8; color: #475569;"> 사용자는 "환율 계산기"보다 <strong>"베트남 돈 계산"</strong>처럼 구체적으로 검색합니다. 이를 잡기 위해 URL 라우팅을 자동화했습니다. </p>
+<h2 class="post-section-title">🔍 3. 국가별 SEO를 위한 URL 전략</h2>
+
+<p class="post-text"> 사용자는 "환율 계산기"보다 <strong>"베트남 돈 계산"</strong>처럼 구체적으로 검색합니다. 이를 잡기 위해 URL 라우팅을 자동화했습니다. </p>
 
 JavaScript
 
@@ -112,7 +138,7 @@ const COUNTRY_PRESETS = {
     'thailand': { from: 'THB', to: 'KRW' },
     // ... 49개국 매핑
 };
-<div style="text-align: center; padding: 40px 20px; background: linear-gradient(to bottom right, #f8fafc, #eff6ff); border-radius: 16px; border: 1px solid #e2e8f0;"> <h2 style="margin-top: 0; color: #1e293b; font-size: 1.8em;">🚀 직접 사용해보세요</h2> <p style="color: #64748b; margin-bottom: 30px; font-size: 1.1em;"> 앱 설치 없이, 브라우저에서 바로 실행됩니다.
+<div style="text-align: center; padding: 60px 20px; background: #f9fafb; border-radius: 20px; border: 1px solid #e5e7eb; margin-top: 60px;"> <h2 style="margin-top: 0 !important; border: none !important; font-size: 28px !important; margin-bottom: 16px !important;">🚀 직접 사용해보세요</h2> <p style="color: #6b7280; margin-bottom: 30px; font-size: 16px;"> 앱 설치 없이, 브라우저에서 바로 실행됩니다.
 
 
 <strong>10개국 환율 계산 / 오프라인 지원 / 가계부 연동</strong> </p>
@@ -122,13 +148,11 @@ const COUNTRY_PRESETS = {
      display: inline-block;
      background: #2563eb;
      color: white;
-     padding: 16px 32px;
-     font-size: 1.2em;
+     padding: 18px 40px;
+     font-size: 18px;
      font-weight: bold;
-     text-decoration: none;
-     border-radius: 50px;
-     box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
-     transition: all 0.2s;
+     border-radius: 12px;
+     box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.5);
    "
 >
    👉 수당헬프 환율 계산기 실행하기
