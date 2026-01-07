@@ -3,7 +3,6 @@ layout: post
 title: "✈️ 여행지 로밍이 끊겨도 OK! PWA 환율 계산기 개발기 (1/3)"
 date: 2026-01-07
 author: Seansble
-categories: [Tech]
 tags:
   - DevLog
   - PWA
