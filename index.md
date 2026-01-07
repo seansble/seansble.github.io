@@ -6,7 +6,9 @@ layout: null
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>수당헬프 개발 기술 블로그</title>
+  <title>수당헬프 개발 기술 블로그 | Money Flow & Code Vibe</title>
+  <meta name="description" content="수당헬프 개발자 Seansble의 기술 블로그. 실업급여·부모급여·군인월급·환율·대출 등 돈의 흐름을 계산하는 핀테크 도구를 Vanilla JS·PWA·SEO 관점에서 구현한 과정을 기록합니다.">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
   <style>
     /* 1. 기본 초기화 & 폰트 */
     * {
@@ -45,6 +47,12 @@ layout: null
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 
+    .header-inner {
+      max-width: 1200px;
+      padding: 0 20px;
+      margin: 0 auto;
+    }
+
     .main-title {
       font-size: 42px;
       font-weight: 800;
@@ -74,7 +82,14 @@ layout: null
       color: #93c5fd;
     }
 
-    /* 3. 섹션 공통 스타일 */
+    /* 3. 메인 콘텐츠 영역 */
+    main.wrapper {
+      max-width: 1200px;
+      padding: 0 20px;
+      margin: 0 auto;
+    }
+
+    /* 4. 섹션 공통 스타일 */
     .section-container {
       margin-bottom: 80px;
     }
@@ -99,7 +114,7 @@ layout: null
       margin: 0;
     }
 
-    /* 4. 서비스 카드 그리드 */
+    /* 5. 서비스 카드 그리드 */
     .grid-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -193,7 +208,7 @@ layout: null
       color: #94a3b8;
     }
 
-    /* 5. 기술 스택 */
+    /* 6. 기술 스택 */
     .tech-wrapper {
       background: white;
       padding: 40px;
@@ -239,7 +254,7 @@ layout: null
       border: 1px solid #e2e8f0;
     }
 
-    /* 6. 블로그 글 목록 */
+    /* 7. 블로그 글 목록 */
     .post-list-modern {
       list-style: none;
       padding: 0;
@@ -281,7 +296,7 @@ layout: null
       border-radius: 4px;
     }
 
-    /* 7. 푸터 */
+    /* 8. 푸터 */
     .footer {
       text-align: center;
       padding: 40px 20px;
@@ -341,22 +356,23 @@ layout: null
 </head>
 <body>
 
-  <!-- 1. 헤더 (그라데이션 배경) -->
-  <div class="header-section">
-    <div class="wrapper">
+  <!-- 헤더 (그라데이션 배경) -->
+  <header class="header-section">
+    <div class="header-inner">
       <h1 class="main-title">Money Flow & Code Vibe</h1>
       <p class="sub-desc">
         안녕하세요, <strong>"돈의 흐름을 추적하는 바이브 코딩"</strong>으로<br>
-        핀테크 도구 <a href="https://sudanghelp.co.kr/" target="_blank">[수당헬프]</a>를 개발하는 <strong>Seansble</strong>입니다.<br>
+        핀테크 도구 <a href="https://sudanghelp.co.kr/" target="_blank" rel="noopener noreferrer">[수당헬프]</a>를 개발하는 <strong>Seansble</strong>입니다.<br>
         기술적 경험(PWA, SEO)과 금융 로직 구현 과정을 기록합니다.
       </p>
     </div>
-  </div>
+  </header>
 
-  <div class="wrapper">
+  <!-- 메인 콘텐츠 -->
+  <main class="wrapper">
 
-    <!-- 2. 서비스 아키텍처 (카드 그리드) -->
-    <div class="section-container">
+    <!-- 서비스 아키텍처 (카드 그리드) -->
+    <section class="section-container">
       <div class="section-header">
         <span class="section-icon">🗺️</span>
         <h2 class="section-title">Service Architecture</h2>
@@ -364,7 +380,7 @@ layout: null
       
       <div class="grid-container">
         <!-- 카드 1: 소득 -->
-        <div class="card">
+        <article class="card">
           <div class="card-header">
             <div class="card-icon">💵</div>
             <h3 class="card-title">소득 & 보장</h3>
@@ -372,25 +388,25 @@ layout: null
           <p class="card-desc">국가에서 보장하는 권리와 혜택을<br>놓치지 않도록 돕습니다.</p>
           <ul class="link-list">
             <li class="link-item">
-              <a href="https://sudanghelp.co.kr/parents/" target="_blank">
+              <a href="https://sudanghelp.co.kr/parents/" target="_blank" rel="noopener noreferrer">
                 👶 출산/육아 (부모급여) <span class="arrow-icon">➔</span>
               </a>
             </li>
             <li class="link-item">
-              <a href="https://sudanghelp.co.kr/military/salary/" target="_blank">
+              <a href="https://sudanghelp.co.kr/military/salary/" target="_blank" rel="noopener noreferrer">
                 🪖 군인 (월급/적금) <span class="arrow-icon">➔</span>
               </a>
             </li>
             <li class="link-item">
-              <a href="https://sudanghelp.co.kr/unemployment/" target="_blank">
+              <a href="https://sudanghelp.co.kr/unemployment/" target="_blank" rel="noopener noreferrer">
                 💼 실업급여 모의계산 <span class="arrow-icon">➔</span>
               </a>
             </li>
           </ul>
-        </div>
+        </article>
 
         <!-- 카드 2: 지출 -->
-        <div class="card">
+        <article class="card">
           <div class="card-header">
             <div class="card-icon">💸</div>
             <h3 class="card-title">비용 & 지출</h3>
@@ -398,30 +414,30 @@ layout: null
           <p class="card-desc">새는 돈을 막고,<br>합리적인 소비를 지원합니다.</p>
           <ul class="link-list">
             <li class="link-item">
-              <a href="https://sudanghelp.co.kr/travel/exchange-calculator/" target="_blank">
+              <a href="https://sudanghelp.co.kr/travel/exchange-calculator/" target="_blank" rel="noopener noreferrer">
                 ✈️ 여행/환전 (PWA) <span class="arrow-icon">➔</span>
               </a>
             </li>
             <li class="link-item">
-              <a href="https://sudanghelp.co.kr/creditcalc/step-loan/" target="_blank">
+              <a href="https://sudanghelp.co.kr/creditcalc/step-loan/" target="_blank" rel="noopener noreferrer">
                 🏦 대출 (체증식/중도상환) <span class="arrow-icon">➔</span>
               </a>
             </li>
             <li class="link-item">
-              <a href="https://sudanghelp.co.kr/additionaltax/supply-calc/" target="_blank">
+              <a href="https://sudanghelp.co.kr/additionaltax/supply-calc/" target="_blank" rel="noopener noreferrer">
                 🧾 세금 (부가세/공급가액) <span class="arrow-icon">➔</span>
               </a>
             </li>
             <li class="link-item">
-              <a href="https://sudanghelp.co.kr/electricity/" target="_blank">
+              <a href="https://sudanghelp.co.kr/electricity/" target="_blank" rel="noopener noreferrer">
                 ⚡ 공과금 (전기요금) <span class="arrow-icon">➔</span>
               </a>
             </li>
           </ul>
-        </div>
+        </article>
 
         <!-- 카드 3: 자산 -->
-        <div class="card">
+        <article class="card">
           <div class="card-header">
             <div class="card-icon">💰</div>
             <h3 class="card-title">자산 형성</h3>
@@ -429,22 +445,22 @@ layout: null
           <p class="card-desc">미래를 위한 자산 증식<br>시뮬레이션을 제공합니다.</p>
           <ul class="link-list">
             <li class="link-item">
-              <a href="https://sudanghelp.co.kr/compoundcalc/" target="_blank">
+              <a href="https://sudanghelp.co.kr/compoundcalc/" target="_blank" rel="noopener noreferrer">
                 📈 투자 설계 (복리/적금) <span class="arrow-icon">➔</span>
               </a>
             </li>
             <li class="link-item">
-              <a href="https://sudanghelp.co.kr/coinmore/" target="_blank">
+              <a href="https://sudanghelp.co.kr/coinmore/" target="_blank" rel="noopener noreferrer">
                 🪙 크립토 (물타기) <span class="arrow-icon">➔</span>
               </a>
             </li>
           </ul>
-        </div>
+        </article>
       </div>
-    </div>
+    </section>
 
-    <!-- 3. 기술 스택 (모던 디자인) -->
-    <div class="section-container">
+    <!-- 기술 스택 -->
+    <section class="section-container">
       <div class="section-header">
         <span class="section-icon">🛠️</span>
         <h2 class="section-title">Tech Stack</h2>
@@ -475,10 +491,10 @@ layout: null
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- 4. 최신 글 목록 -->
-    <div class="section-container">
+    <!-- 최신 글 목록 -->
+    <section class="section-container">
       <div class="section-header">
         <span class="section-icon">📝</span>
         <h2 class="section-title">Latest Dev Logs</h2>
@@ -486,18 +502,18 @@ layout: null
       <ul class="post-list-modern">
         {% for post in site.posts %}
           <li class="post-card">
-            <a href="{{ post.url }}" class="post-title-link">{{ post.title }}</a>
+            <a href="{{ post.url | relative_url }}" class="post-title-link">{{ post.title }}</a>
             <span class="post-meta-date">{{ post.date | date: "%Y-%m-%d" }}</span>
           </li>
         {% endfor %}
       </ul>
-    </div>
+    </section>
 
-  </div>
+  </main>
 
-  <!-- 5. 푸터 -->
+  <!-- 푸터 -->
   <footer class="footer">
-    <p>© 2025 <a href="https://sudanghelp.co.kr/" target="_blank">수당헬프</a> · Built with Jekyll & GitHub Pages</p>
+    <p>© 2025 <a href="https://sudanghelp.co.kr/" target="_blank" rel="noopener noreferrer">수당헬프</a> · Built with Jekyll & GitHub Pages</p>
   </footer>
 
 </body>
