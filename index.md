@@ -208,7 +208,111 @@ layout: null
       color: #94a3b8;
     }
 
-    /* 6. 기술 스택 */
+    /* 6. 시리즈 카드 (Featured) */
+    .series-card {
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      border-radius: 20px;
+      padding: 36px;
+      color: white;
+      border: 1px solid #475569;
+    }
+
+    .series-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+    }
+
+    .series-badge {
+      display: inline-block;
+      background: linear-gradient(to right, #3b82f6, #8b5cf6);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .series-card .card-title {
+      color: white;
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .series-card .card-desc {
+      color: #94a3b8;
+      margin-bottom: 28px;
+    }
+
+    .series-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .series-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      transition: all 0.2s;
+    }
+
+    .series-item:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.2);
+      transform: translateX(5px);
+    }
+
+    .series-num {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .series-item-content {
+      flex: 1;
+    }
+
+    .series-item-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-bottom: 2px;
+    }
+
+    .series-item-tags {
+      font-size: 12px;
+      color: #64748b;
+    }
+
+    .series-item-arrow {
+      color: #64748b;
+      font-size: 18px;
+      transition: transform 0.2s;
+    }
+
+    .series-item:hover .series-item-arrow {
+      transform: translateX(4px);
+      color: #94a3b8;
+    }
+
+    /* 7. 기술 스택 */
     .tech-wrapper {
       background: white;
       padding: 40px;
@@ -254,7 +358,7 @@ layout: null
       border: 1px solid #e2e8f0;
     }
 
-    /* 7. 블로그 글 목록 */
+    /* 8. 블로그 글 목록 */
     .post-list-modern {
       list-style: none;
       padding: 0;
@@ -296,7 +400,7 @@ layout: null
       border-radius: 4px;
     }
 
-    /* 8. 푸터 */
+    /* 9. 푸터 */
     .footer {
       text-align: center;
       padding: 40px 20px;
@@ -332,6 +436,12 @@ layout: null
       }
       .card { 
         padding: 24px; 
+      }
+      .series-card {
+        padding: 24px;
+      }
+      .series-card .card-title {
+        font-size: 20px;
       }
       .section-title {
         font-size: 22px;
@@ -370,6 +480,55 @@ layout: null
 
   <!-- 메인 콘텐츠 -->
   <main class="wrapper">
+
+    <!-- 📚 Featured 시리즈 -->
+    <section class="section-container">
+      <div class="section-header">
+        <span class="section-icon">📚</span>
+        <h2 class="section-title">Featured Series</h2>
+      </div>
+      
+      <article class="card series-card">
+        <span class="series-badge">3-Part Series</span>
+        <h3 class="card-title">✈️ 환율 계산기 개발기</h3>
+        <p class="card-desc">
+          베트남·태국 등 여행지에서 로밍 없이도 작동하는 PWA 환율 계산기.<br>
+          오프라인 캐싱, 49개국 SEO, XSS 보안까지 3편에 걸쳐 다룹니다.
+        </p>
+        <ul class="series-list">
+          <li>
+            <a href="{{ '/2026/01/07/exchange-calculator-pwa' | relative_url }}" class="series-item">
+              <span class="series-num">1</span>
+              <div class="series-item-content">
+                <div class="series-item-title">오프라인 퍼스트 & PWA 전략</div>
+                <div class="series-item-tags">Service Worker · Fail-over · beforeinstallprompt</div>
+              </div>
+              <span class="series-item-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ '/2026/01/08/exchange-calculator-seo' | relative_url }}" class="series-item">
+              <span class="series-num">2</span>
+              <div class="series-item-content">
+                <div class="series-item-title">49개국 URL 라우팅 & SEO 최적화</div>
+                <div class="series-item-tags">COUNTRY_PRESETS · JSON-LD · BreadcrumbList</div>
+              </div>
+              <span class="series-item-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ '/2026/01/09/exchange-calculator-security' | relative_url }}" class="series-item">
+              <span class="series-num">3</span>
+              <div class="series-item-content">
+                <div class="series-item-title">보안 강화 & 성능 튜닝</div>
+                <div class="series-item-tags">XSS 방지 · DOM 캐싱 · 화이트리스트</div>
+              </div>
+              <span class="series-item-arrow">→</span>
+            </a>
+          </li>
+        </ul>
+      </article>
+    </section>
 
     <!-- 서비스 아키텍처 (카드 그리드) -->
     <section class="section-container">
