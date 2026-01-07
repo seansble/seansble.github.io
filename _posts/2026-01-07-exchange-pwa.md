@@ -9,11 +9,40 @@ description: "베트남, 필리핀 등 여행지 통신 환경을 고려한 오�
 image: "https://sudanghelp.co.kr/og-image.png"
 ---
 
-<div style="background: #f1f5f9; padding: 25px; border-radius: 12px; border-left: 6px solid #3b82f6; color: #334155; margin-bottom: 40px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
-  <h3 style="margin-top: 0; color: #1e293b;">🏝️ "계산대 앞에서 인터넷이 안 터진다면?"</h3>
+<style>
+  /* 코드 블록 다크모드 (VS Code 스타일) */
+  pre {
+    background-color: #1e1e1e !important; /* 진한 회색 배경 */
+    color: #d4d4d4 !important; /* 연한 회색 글자 */
+    padding: 20px !important;
+    border-radius: 8px !important;
+    overflow-x: auto !important;
+    border: 1px solid #333 !important;
+    font-family: 'Consolas', 'Monaco', monospace !important;
+    line-height: 1.5 !important;
+    margin: 20px 0 !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3) !important;
+  }
+  
+  /* 인라인 코드 (문장 중간에 있는거) */
+  p code, li code {
+    background-color: #ffe4e6 !important; /* 살짝 붉은 배경 */
+    color: #be123c !important; /* 붉은 글자 */
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
+    font-size: 0.9em !important;
+    font-weight: bold !important;
+  }
+
+  /* 링크 스타일 */
+  a { text-decoration: none; }
+</style>
+
+<div style="background: #f8fafc; padding: 25px; border-radius: 12px; border-left: 6px solid #3b82f6; color: #334155; margin-bottom: 40px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+  <h3 style="margin-top: 0; color: #0f172a;">🏝️ "계산대 앞에서 인터넷이 안 터진다면?"</h3>
   <p style="font-size: 1.05em; line-height: 1.7; margin-bottom: 0;">
     해외여행 중 가장 당황스러운 순간은 환율 계산기 앱이 로딩되다가 멈출 때입니다.<br>
-    저는 이 문제를 해결하기 위해 <strong><a href="https://sudanghelp.co.kr/travel/exchange-calculator/" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 800; border-bottom: 2px solid #2563eb;">[수당헬프 환율 계산기]</a></strong>를 개발하며 <strong>"비행기 모드에서도 0.1초 만에 실행되는 웹"</strong>을 목표로 잡았습니다.
+    저는 이 문제를 해결하기 위해 <strong><a href="https://sudanghelp.co.kr/travel/exchange-calculator/" target="_blank" style="color: #2563eb; font-weight: 800; border-bottom: 2px solid #2563eb;">[수당헬프 환율 계산기]</a></strong>를 개발하며 <strong>"비행기 모드에서도 0.1초 만에 실행되는 웹"</strong>을 목표로 잡았습니다.
   </p>
 </div>
 
@@ -70,7 +99,7 @@ function updateDisplay() {
     // 렌더링 시에는 메모리 주소로 즉시 접근 (No Reflow overhead)
     DOM.amountValue.textContent = formatNumber(currentInput); 
 }
-<p style="background: #fffbeb; padding: 10px 15px; border-left: 4px solid #f59e0b; color: #92400e;"> 🚀 <strong>Result:</strong> 갤럭시 S8급 구형 기기에서도 <strong>60fps의 부드러운 반응 속도</strong>를 확보했습니다. </p>
+<p style="background: #fffbeb; padding: 10px 15px; border-left: 4px solid #f59e0b; color: #92400e; border-radius: 4px;"> 🚀 <strong>Result:</strong> 갤럭시 S8급 구형 기기에서도 <strong>60fps의 부드러운 반응 속도</strong>를 확보했습니다. </p>
 
 🔍 3. 국가별 SEO를 위한 URL 전략
 <p style="font-size: 1.1em; line-height: 1.8; color: #475569;"> 사용자는 "환율 계산기"보다 <strong>"베트남 돈 계산"</strong>처럼 구체적으로 검색합니다. 이를 잡기 위해 URL 라우팅을 자동화했습니다. </p>
@@ -101,8 +130,6 @@ const COUNTRY_PRESETS = {
      box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
      transition: all 0.2s;
    "
-   onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 20px 25px -5px rgba(37, 99, 235, 0.4)';"
-   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 15px -3px rgba(37, 99, 235, 0.3)';"
 >
    👉 수당헬프 환율 계산기 실행하기
 </a>
