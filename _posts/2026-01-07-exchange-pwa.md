@@ -9,72 +9,89 @@ description: "베트남, 필리핀 등 여행지 통신 환경을 고려한 오�
 image: "https://sudanghelp.co.kr/og-image.png"
 ---
 
-<!-- 🎨 스타일 정의 (심플 & 가독성 최적화) -->
+<!-- 🎨 스타일 정의 (가독성 최적화 & 다크모드 코드) -->
 <style>
-  /* 전체 레이아웃: 적당한 너비로 중앙 정렬 */
+  /* 1. 전체 레이아웃 */
   .wrapper {
-    max-width: 860px !important;
+    max-width: 900px !important;
     padding: 0 20px !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
   }
   
-  /* 본문 텍스트: 읽기 편한 크기와 줄간격 */
+  /* 2. 본문 텍스트 (일반) */
   p, li {
     font-size: 17px !important;
     line-height: 1.8 !important;
-    color: #333 !important; /* 진한 회색 */
+    color: #333333 !important; /* 진한 회색 (가독성 좋음) */
     margin-bottom: 24px !important;
   }
 
-  /* 제목 스타일: 크기/색상 통일 */
+  /* 3. 제목 스타일 (크기 통일) */
   h2.section-title {
     margin-top: 60px !important;
     margin-bottom: 20px !important;
-    font-size: 24px !important;
-    font-weight: 700 !important;
-    color: #111 !important; /* 검정 */
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px !important;
+    font-size: 26px !important;
+    font-weight: 800 !important;
+    color: #111111 !important; /* 검정 */
+    border-bottom: 2px solid #eeeeee;
+    padding-bottom: 12px !important;
+    line-height: 1.3 !important;
   }
 
-  /* 코드 블록: 다크모드 (흰색 글씨) */
+  /* 4. 코드 블록 (다크모드 강제 적용) */
   pre {
-    background-color: #1e1e1e !important; /* 진한 배경 */
-    color: #f8f8f2 !important; /* 밝은 글씨 */
-    padding: 20px !important;
+    background-color: #1e1e1e !important; /* VS Code 배경색 */
+    color: #d4d4d4 !important; /* 기본 글자색 (밝은 회색) */
+    padding: 24px !important;
     border-radius: 8px !important;
-    border: 1px solid #333 !important;
-    font-family: 'Consolas', monospace !important;
+    border: 1px solid #333333 !important;
+    font-family: 'Consolas', 'Monaco', monospace !important;
     line-height: 1.6 !important;
-    font-size: 14px !important;
+    font-size: 15px !important;
     margin: 30px 0 !important;
-    overflow-x: auto;
+    overflow-x: auto; /* 가로 스크롤 */
   }
   
-  /* 코드 안의 주석 색상 (회색) */
-  .code-comment { color: #6a9955; } 
+  /* 코드 하이라이팅 (수동 지정) */
+  .code-keyword { color: #569cd6 !important; font-weight: bold; } /* const, function, async */
+  .code-string { color: #ce9178 !important; } /* 문자열 */
+  .code-comment { color: #6a9955 !important; } /* 주석 */
+  .code-function { color: #dcdcaa !important; } /* 함수명 */
 
-  /* 인라인 코드 (문장 중간) */
+  /* 5. 인라인 코드 (문장 중간 강조) */
   code.inline {
-    background-color: #f3f4f6;
-    color: #e11d48; /* 붉은 포인트 */
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-family: monospace;
-    font-weight: 600;
-    font-size: 0.9em;
+    background-color: #f3f4f6 !important; /* 연한 회색 배경 */
+    color: #e11d48 !important; /* 붉은색 글자 */
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
+    font-family: monospace !important;
+    font-weight: 600 !important;
+    font-size: 0.95em !important;
+    border: 1px solid #e5e7eb !important;
   }
 
-  /* 링크 스타일 */
-  a { text-decoration: none; transition: all 0.2s; }
-  a:hover { opacity: 0.8; }
+  /* 6. 링크 스타일 */
+  a { text-decoration: none; transition: color 0.2s; }
+  a:hover { text-decoration: underline; }
+  
+  /* 인트로 박스 */
+  .intro-box {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 50px;
+  }
 </style>
 
-<!-- 인트로 박스 (심플한 회색) -->
-<div style="background: #f9fafb; padding: 30px; border-radius: 12px; border: 1px solid #e5e7eb; margin-bottom: 50px;">
-  <h3 style="margin-top: 0; color: #111; font-size: 20px; font-weight: 700; margin-bottom: 12px;">🏝️ "계산대 앞에서 인터넷이 안 터진다면?"</h3>
-  <p style="font-size: 16px; line-height: 1.7; color: #4b5563; margin: 0;">
+<!-- 본문 시작 -->
+
+<!-- 인트로 박스 (심플하고 깔끔하게) -->
+<div class="intro-box">
+  <h3 style="margin-top: 0; color: #111; font-size: 22px; font-weight: 700; margin-bottom: 12px;">🏝️ "계산대 앞에서 인터넷이 안 터진다면?"</h3>
+  <p style="font-size: 17px; line-height: 1.7; color: #4b5563; margin: 0;">
     해외여행 중 가장 당황스러운 순간은 환율 계산기 앱이 로딩되다가 멈출 때입니다.<br>
-    저는 이 문제를 해결하기 위해 <strong><a href="https://sudanghelp.co.kr/travel/exchange-calculator/" target="_blank" style="color: #2563eb; font-weight: 800; border-bottom: 1px solid #2563eb;">[수당헬프 환율 계산기]</a></strong>를 개발하며 <strong>"비행기 모드에서도 0.1초 만에 실행되는 웹"</strong>을 목표로 잡았습니다.
+    저는 이 문제를 해결하기 위해 <strong><a href="https://sudanghelp.co.kr/travel/exchange-calculator/" target="_blank" style="color: #2563eb; font-weight: 800; border-bottom: 2px solid #2563eb;">[수당헬프 환율 계산기]</a></strong>를 개발하며 <strong>"비행기 모드에서도 0.1초 만에 실행되는 웹"</strong>을 목표로 잡았습니다.
   </p>
 </div>
 
@@ -85,35 +102,34 @@ image: "https://sudanghelp.co.kr/og-image.png"
 환율 데이터는 실시간성이 중요하지만, 여행지에서는 <code class="inline">'가용성(Availability)'</code>이 더 중요합니다. API 호출이 실패했을 때 에러를 띄우는 대신, <strong>캐싱된 데이터</strong>를 보여주는 로직을 구현했습니다.
 </p>
 
-```javascript
-// calculator.js 핵심 로직
-async function loadRates() {
-    const rateInfo = document.getElementById('rate-update-info');
+<!-- 코드 블록 1 -->
+<pre><code><span class="code-comment">// calculator.js 핵심 로직</span>
+<span class="code-keyword">async function</span> <span class="code-function">loadRates</span>() {
+    <span class="code-keyword">const</span> rateInfo = document.getElementById(<span class="code-string">'rate-update-info'</span>);
     
-    try {
-        // 1. Edge Network에서 최신 환율 요청
-        const response = await fetch(EXCHANGE_API_URL);
-        if (!response.ok) throw new Error('Network Error');
+    <span class="code-keyword">try</span> {
+        <span class="code-comment">// 1. Edge Network에서 최신 환율 요청</span>
+        <span class="code-keyword">const</span> response = <span class="code-keyword">await</span> fetch(EXCHANGE_API_URL);
+        <span class="code-keyword">if</span> (!response.ok) <span class="code-keyword">throw new</span> Error(<span class="code-string">'Network Error'</span>);
         
-        // 2. 성공 시 데이터 갱신
-        const data = await response.json();
-        updateRates(data);
+        <span class="code-comment">// 2. 성공 시 데이터 갱신</span>
+        <span class="code-keyword">const</span> data = <span class="code-keyword">await</span> response.json();
+        <span class="code-function">updateRates</span>(data);
         
-    } catch (e) {
-        // 3. 🚨 실패 시: 에러 대신 '오프라인 모드' 전환
-        console.warn('Offline Mode Activated');
+    } <span class="code-keyword">catch</span> (e) {
+        <span class="code-comment">// 3. 🚨 실패 시: 에러 대신 '오프라인 모드' 전환</span>
+        console.warn(<span class="code-string">'Offline Mode Activated'</span>);
         
-        // 기존 LocalStorage 값을 그대로 사용하여 계산기 기능 유지
-        rateInfo.textContent = '오프라인 모드 (최근 데이터)';
-        rateInfo.style.color = '#ef4444'; 
+        <span class="code-comment">// 기존 LocalStorage 값을 그대로 사용하여 계산기 기능 유지</span>
+        rateInfo.textContent = <span class="code-string">'오프라인 모드 (최근 데이터)'</span>;
+        rateInfo.style.color = <span class="code-string">'#ef4444'</span>; 
     }
-}
-```
+}</code></pre>
 
 <!-- 팁 박스 -->
-<div style="background: #fff; border: 1px solid #ddd; border-left: 4px solid #22c55e; padding: 15px 20px; border-radius: 4px; margin: 20px 0;">
-  <strong style="color: #15803d; display: block; margin-bottom: 5px;">💡 개발 포인트</strong>
-  <span style="color: #374151; font-size: 15px;">
+<div style="background: #fff; border: 1px solid #ddd; border-left: 5px solid #22c55e; padding: 20px; border-radius: 4px; margin: 30px 0;">
+  <strong style="color: #15803d; display: block; margin-bottom: 8px; font-size: 16px;">💡 개발 포인트</strong>
+  <span style="color: #374151; font-size: 16px; line-height: 1.6;">
   <code class="inline">catch</code> 블록에서 에러를 중단시키지 않고, <strong>사용자에게 "오프라인 모드"임을 인지시키는 UX</strong>로 전환하여 앱의 연속성을 보장했습니다.
   </span>
 </div>
@@ -125,20 +141,19 @@ async function loadRates() {
 키패드를 누를 때마다 화면이 갱신되어야 하는데, 매번 <code class="inline">document.getElementById</code>를 호출하면 구형 기기에서 <strong>버벅거림(Jank)</strong>이 발생합니다. 이를 <strong>DOM Reference Caching</strong>으로 해결했습니다.
 </p>
 
-```javascript
-// DOM 요소를 메모리에 한 번만 저장 (Look-up 비용 절감)
-const DOM = {};
+<!-- 코드 블록 2 -->
+<pre><code><span class="code-comment">// DOM 요소를 메모리에 한 번만 저장 (Look-up 비용 절감)</span>
+<span class="code-keyword">const</span> DOM = {};
 
-document.addEventListener('DOMContentLoaded', () => {
-    DOM.amountValue = document.getElementById('amount-value-input');
-    DOM.resultBox = document.getElementById('conversion-results');
+document.addEventListener(<span class="code-string">'DOMContentLoaded'</span>, () => {
+    DOM.amountValue = document.getElementById(<span class="code-string">'amount-value-input'</span>);
+    DOM.resultBox = document.getElementById(<span class="code-string">'conversion-results'</span>);
 });
 
-function updateDisplay() {
-    // 렌더링 시에는 메모리 주소로 즉시 접근 (No Reflow overhead)
-    DOM.amountValue.textContent = formatNumber(currentInput); 
-}
-```
+<span class="code-keyword">function</span> <span class="code-function">updateDisplay</span>() {
+    <span class="code-comment">// 렌더링 시에는 메모리 주소로 즉시 접근 (No Reflow overhead)</span>
+    DOM.amountValue.textContent = <span class="code-function">formatNumber</span>(currentInput); 
+}</code></pre>
 
 <p>
 이 최적화를 통해 <strong>갤럭시 S8급 구형 기기</strong>에서도 <strong>60fps의 부드러운 반응 속도</strong>를 확보했습니다.
@@ -151,21 +166,20 @@ function updateDisplay() {
 사용자는 "환율 계산기"보다 <strong>"베트남 돈 계산"</strong>처럼 구체적으로 검색합니다. 이를 잡기 위해 URL 라우팅을 자동화했습니다.
 </p>
 
-```javascript
-// URL path를 감지하여 해당 국가로 자동 세팅
-const COUNTRY_PRESETS = {
-    'vietnam': { from: 'VND', to: 'KRW' },
-    'thailand': { from: 'THB', to: 'KRW' },
-    // ... 49개국 매핑
-};
-```
+<!-- 코드 블록 3 -->
+<pre><code><span class="code-comment">// URL path를 감지하여 해당 국가로 자동 세팅</span>
+<span class="code-keyword">const</span> COUNTRY_PRESETS = {
+    <span class="code-string">'vietnam'</span>: { from: <span class="code-string">'VND'</span>, to: <span class="code-string">'KRW'</span> },
+    <span class="code-string">'thailand'</span>: { from: <span class="code-string">'THB'</span>, to: <span class="code-string">'KRW'</span> },
+    <span class="code-comment">// ... 49개국 매핑</span>
+};</code></pre>
 
 <br>
 
 <!-- 하단 버튼 (심플하고 크게) -->
-<div style="text-align: center; margin-top: 60px; padding: 40px; background: #f8fafc; border-radius: 16px; border: 1px solid #e2e8f0;">
-    <h2 style="margin-top: 0 !important; border: none !important; font-size: 24px !important; margin-bottom: 10px !important;">🚀 직접 사용해보세요</h2>
-    <p style="color: #64748b; margin-bottom: 25px; font-size: 16px;">
+<div style="text-align: center; margin-top: 60px; padding: 50px 20px; background: #f8fafc; border-radius: 16px; border: 1px solid #e2e8f0;">
+    <h2 style="margin-top: 0 !important; border: none !important; font-size: 26px !important; margin-bottom: 12px !important; color: #111 !important;">🚀 직접 사용해보세요</h2>
+    <p style="color: #64748b; margin-bottom: 30px; font-size: 17px;">
         <strong>10개국 환율 계산 / 오프라인 지원 / 가계부 연동</strong>
     </p>
     
@@ -174,13 +188,13 @@ const COUNTRY_PRESETS = {
          display: inline-block;
          background: #111; /* 검정색 버튼 (깔끔) */
          color: #fff;
-         padding: 16px 32px;
-         font-size: 16px;
+         padding: 18px 36px;
+         font-size: 17px;
          font-weight: bold;
          border-radius: 8px;
          transition: transform 0.2s;
        "
     >
-       👉 수당헬프 환율 계산기 실행하기
+       수당헬프 환율 계산기 실행하기
     </a>
 </div>
