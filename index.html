@@ -15,4 +15,17 @@ title: 수당헬프 개발 기술 블로그
 
 ## 🚀 Service Link
 제가 만든 서비스가 궁금하다면 아래 링크를 확인해주세요.
- **[수당헬프(SudangHelp) 바로가기](https://sudanghelp.co.kr/)**
+👉 **[수당헬프(SudangHelp) 바로가기](https://sudanghelp.co.kr/)**
+
+---
+
+## 📝 Latest Dev Logs (최신 개발기)
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <span style="color: #666; font-size: 0.9em;">[{{ post.date | date: "%Y-%m-%d" }}]</span>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
