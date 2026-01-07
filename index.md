@@ -1,134 +1,151 @@
 layout: default title: 수당헬프 개발 기술 블로그
 
-<!-- 🎨 스타일 정의 (가독성 & 여백 교정) -->
+<!-- 🎨 스타일 정의 (가독성 & 카드 디자인 강화) -->
 
 <style>
-/* 1. 전체 레이아웃 /
+/* 1. 전체 레이아웃 & 기본 폰트 /
 .wrapper {
 max-width: 900px !important;
-padding: 0 20px !important;
+padding: 0 24px !important;
 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
 color: #333;
-line-height: 1.8 !important; / 줄간격 시원하게 */
+line-height: 1.8; / 줄간격 더 시원하게 */
 }
 
-/* 2. 타이포그래피 & 여백 (Vertical Rhythm) /
+/* 2. 타이포그래피 (폰트 크기 UP) /
 h1 {
-font-size: 36px;
+font-size: 38px; / 제목 더 크게 /
 font-weight: 800;
 margin-top: 60px;
-margin-bottom: 30px; / 제목 아래 여백 넉넉히 */
+margin-bottom: 24px;
 color: #111;
 letter-spacing: -0.5px;
+text-align: center; / 제목 중앙 정렬 */
 }
 
 h2.section-title {
-font-size: 28px;
+font-size: 30px; /* 섹션 제목도 키움 */
 font-weight: 700;
 color: #222;
-border-bottom: 2px solid #eee;
-padding-bottom: 15px;
-margin-top: 80px !important; /* 섹션 위 여백 아주 넉넉하게 /
-margin-bottom: 40px !important; / 섹션 제목 아래 여백 */
+border-bottom: 3px solid #eee;
+padding-bottom: 16px;
+margin-top: 80px;
+margin-bottom: 32px;
 }
 
 h3 {
-font-size: 22px;
-font-weight: 600;
+font-size: 24px; /* 소제목 키움 */
+font-weight: 700;
 color: #444;
-margin-top: 50px !important; /* 소제목 위 여백 /
-margin-bottom: 20px !important; / 소제목 아래 여백 */
+margin-top: 40px;
+margin-bottom: 16px;
 }
 
 p {
-font-size: 17px;
-color: #555;
-margin-bottom: 30px !important; /* 문단 아래 여백 */
+font-size: 19px; /* ★ 본문 폰트 19px로 확대 ★ */
+color: #4a4a4a;
+margin-bottom: 28px;
 word-break: keep-all;
 }
 
-/* 3. 인트로 박스 /
-.intro-container {
-background-color: #f9f9f9;
-padding: 50px 40px;
-border-radius: 12px;
-margin-bottom: 80px; / 인트로 아래 여백 */
+li {
+font-size: 19px; /* 리스트 폰트도 19px */
+margin-bottom: 12px;
+color: #4a4a4a;
+}
+
+/* 3. 인트로 카드 (깔끔한 박스 디자인) /
+.intro-card {
+background-color: #f8fafc;
+border: 1px solid #e2e8f0;
+border-radius: 16px;
+padding: 40px;
+margin-bottom: 60px;
 text-align: center;
-border: 1px solid #eee;
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); / 은은한 그림자 */
 }
 
-.intro-title {
-font-size: 32px;
-font-weight: 800;
-margin-bottom: 20px;
-color: #111;
-}
-
-.intro-desc {
-font-size: 18px;
-color: #666;
+.intro-text {
+font-size: 20px;
 line-height: 1.6;
+color: #475569;
 margin: 0;
 }
 
-/* 4. 서비스 리스트 /
+.intro-text strong {
+color: #2563eb; /* 강조색 파랑 */
+}
+
+/* 4. 서비스 리스트 (카드형) */
 .service-list {
 list-style: none;
 padding: 0;
-margin: 0 0 40px 0; / 리스트 아래 여백 */
+margin: 0 0 50px 0;
 }
 
 .service-item {
-margin-bottom: 16px; /* 항목 사이 여백 */
-padding-left: 20px;
-border-left: 4px solid #ddd;
-font-size: 17px;
-line-height: 1.6;
+background: #fff;
+border: 1px solid #eee;
+border-radius: 12px;
+padding: 20px;
+margin-bottom: 16px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+transition: transform 0.2s;
+}
+
+.service-item:hover {
+transform: translateY(-2px);
+box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+border-color: #ddd;
 }
 
 .service-category {
-font-weight: 700;
-color: #333;
-margin-right: 10px;
+font-weight: 800;
+color: #1e293b;
+font-size: 18px;
 display: inline-block;
+min-width: 100px;
+margin-right: 12px;
 }
 
-/* 5. 링크 */
+/* 5. 링크 스타일 */
 a {
-color: #0366d6;
+color: #2563eb;
 text-decoration: none;
-font-weight: 500;
+font-weight: 600;
+border-bottom: 1px solid transparent;
+transition: all 0.2s;
 }
-a:hover { text-decoration: underline; }
+a:hover {
+border-bottom-color: #2563eb;
+color: #1d4ed8;
+}
 
-/* 6. 기술 스택 (Tech Stack) - 여백 수정 */
+/* 6. 기술 스택 (그리드 박스) /
 .tech-container {
-background: #f1f3f5;
+background: #1e293b; / 다크 모드 박스 */
+color: #fff;
 padding: 30px;
-border-radius: 12px;
+border-radius: 16px;
 margin-bottom: 60px;
 }
 
 .tech-row {
-margin-bottom: 20px; /* 각 줄 사이 여백 /
-font-size: 17px;
-display: flex; / 플렉스 박스로 정렬 */
+margin-bottom: 20px;
+font-size: 18px;
+display: flex;
 align-items: baseline;
 }
-
 .tech-row:last-child { margin-bottom: 0; }
 
 .tech-label {
 font-weight: 700;
-color: #111;
-width: 80px; /* 라벨 너비 고정 /
-flex-shrink: 0; / 줄어들지 않게 */
+color: #60a5fa; /* 밝은 파랑 */
+width: 80px;
+flex-shrink: 0;
 }
 
-.tech-content {
-color: #444;
-line-height: 1.5;
-}
+.tech-content { color: #e2e8f0; }
 
 /* 7. 글 목록 /
 .post-list {
@@ -137,37 +154,38 @@ padding: 0;
 margin-top: 30px;
 }
 .post-item {
-padding: 16px 0;
+padding: 20px 0;
 border-bottom: 1px solid #eee;
-font-size: 17px;
-display: flex; / 날짜와 제목 가로 정렬 /
+font-size: 19px; / 글 목록도 크게 */
+display: flex;
 align-items: center;
 }
 .post-date {
-color: #888;
+color: #94a3b8;
 font-family: monospace;
-font-size: 15px;
-margin-right: 20px;
-min-width: 110px; / 날짜 너비 고정 */
+font-size: 16px;
+margin-right: 24px;
+min-width: 120px;
 }
 
 /* 모바일 대응 */
 @media (max-width: 768px) {
 .wrapper { padding: 0 20px !important; }
-h1 { font-size: 28px; margin-top: 40px; }
-h2.section-title { font-size: 24px; margin-top: 60px; }
-.intro-container { padding: 30px 20px; }
-.tech-row { flex-direction: column; margin-bottom: 24px; }
-.tech-label { margin-bottom: 6px; }
-.post-item { flex-direction: column; align-items: flex-start; gap: 6px; }
+h1 { font-size: 32px; margin-top: 40px; }
+.intro-card { padding: 30px 20px; }
+.intro-text { font-size: 18px; }
+.tech-row { flex-direction: column; gap: 8px; }
+.post-item { flex-direction: column; align-items: flex-start; gap: 8px; }
+.post-date { margin-bottom: 0; }
 }
 </style>
 
 <!-- 본문 시작 -->
 
-<div class="intro-container">
-<div class="intro-title">💸 Money Flow & Code Vibe 👋</div>
-<p class="intro-desc">
+<h1>💸 Money Flow & Code Vibe 👋</h1>
+
+<div class="intro-card">
+<p class="intro-text">
 안녕하세요, <strong>"돈의 흐름을 추적하는 바이브 코딩"</strong>으로
 
 
@@ -190,7 +208,7 @@ h2.section-title { font-size: 24px; margin-top: 60px; }
 </div>
 
 <h2 class="section-title">🗺️ Service Architecture</h2>
-<p style="font-size: 18px; color: #666; margin-bottom: 50px;">
+<p style="text-align: center; color: #666; margin-bottom: 50px;">
 수당헬프는 단순한 계산기를 넘어,
 
 
@@ -199,8 +217,8 @@ h2.section-title { font-size: 24px; margin-top: 60px; }
 <strong>소득 · 지출 · 자산</strong>을 아우르는 3가지 핵심 축으로 구성되어 있습니다.
 </p>
 
-<h3>1.  소득 & 보장 (Income)</h3>
-<p style="margin-bottom: 15px; color: #666;">국가에서 보장하는 권리와 혜택을 놓치지 않도록 돕습니다.</p>
+<h3>1. 소득 & 보장 (Income)</h3>
+<p style="margin-bottom: 15px; color: #666; font-size: 18px;">국가에서 보장하는 권리와 혜택을 놓치지 않도록 돕습니다.</p>
 <ul class="service-list">
 <li class="service-item">
 <span class="service-category">출산/육아</span>
@@ -216,8 +234,8 @@ h2.section-title { font-size: 24px; margin-top: 60px; }
 </li>
 </ul>
 
-<h3>2.  비용 & 지출 (Expense)</h3>
-<p style="margin-bottom: 15px; color: #666;">새는 돈을 막고, 합리적인 소비를 지원하는 도구입니다.</p>
+<h3>2. 비용 & 지출 (Expense)</h3>
+<p style="margin-bottom: 15px; color: #666; font-size: 18px;">새는 돈을 막고, 합리적인 소비를 지원하는 도구입니다.</p>
 <ul class="service-list">
 <li class="service-item">
 <span class="service-category">여행/환전</span>
@@ -237,8 +255,8 @@ h2.section-title { font-size: 24px; margin-top: 60px; }
 </li>
 </ul>
 
-<h3>3.  자산 형성 (Asset)</h3>
-<p style="margin-bottom: 15px; color: #666;">미래를 위한 자산 증식 시뮬레이션을 제공합니다.</p>
+<h3>3. 자산 형성 (Asset)</h3>
+<p style="margin-bottom: 15px; color: #666; font-size: 18px;">미래를 위한 자산 증식 시뮬레이션을 제공합니다.</p>
 <ul class="service-list">
 <li class="service-item">
 <span class="service-category">투자 설계</span>
