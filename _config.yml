@@ -1,4 +1,4 @@
-title: Seansble Dev Log
+title: Money Flow & Code Vibe
 email: seansble@example.com
 description: >-
   FinTech & PWA Tech Blog. 바이브 코딩을 통해 돈의 흐름을 추적하는 서비스를 만드는 '수당헬프(SudangHelp)' 개발 기술 블로그.
@@ -8,7 +8,9 @@ twitter_username: seansble
 github_username: seansble
 
 # Build settings
-theme: jekyll
+# 🚨 중요: theme 이름을 정확히 적어야 합니다.
+theme: jekyll-theme-minimal
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
