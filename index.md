@@ -1,144 +1,165 @@
 layout: default title: 수당헬프 개발 기술 블로그
 
-<!-- 🎨 스타일 정의 (심플 & 클린) -->
+<!-- 🎨 스타일 정의 (가독성 & 여백 교정) -->
 
 <style>
 /* 1. 전체 레이아웃 /
 .wrapper {
-max-width: 900px !important; / 읽기 가장 편한 폭 */
+max-width: 900px !important;
 padding: 0 20px !important;
 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
 color: #333;
-line-height: 1.7;
+line-height: 1.8 !important; / 줄간격 시원하게 */
 }
 
-/* 2. 타이포그래피 (위계질서 확립) */
+/* 2. 타이포그래피 & 여백 (Vertical Rhythm) /
 h1 {
-font-size: 34px;
+font-size: 36px;
 font-weight: 800;
-color: #111;
 margin-top: 60px;
-margin-bottom: 20px;
+margin-bottom: 30px; / 제목 아래 여백 넉넉히 */
+color: #111;
 letter-spacing: -0.5px;
 }
 
 h2.section-title {
-font-size: 26px;
+font-size: 28px;
 font-weight: 700;
 color: #222;
-border-bottom: 2px solid #eee; /* 깔끔한 구분선 /
-padding-bottom: 12px;
-margin-top: 70px; / 섹션 간격 넓게 */
-margin-bottom: 24px;
+border-bottom: 2px solid #eee;
+padding-bottom: 15px;
+margin-top: 80px !important; /* 섹션 위 여백 아주 넉넉하게 /
+margin-bottom: 40px !important; / 섹션 제목 아래 여백 */
 }
 
 h3 {
-font-size: 20px;
+font-size: 22px;
 font-weight: 600;
 color: #444;
-margin-top: 30px;
-margin-bottom: 12px;
+margin-top: 50px !important; /* 소제목 위 여백 /
+margin-bottom: 20px !important; / 소제목 아래 여백 */
 }
 
 p {
 font-size: 17px;
 color: #555;
-margin-bottom: 24px;
-word-break: keep-all; /* 단어 단위 줄바꿈 */
+margin-bottom: 30px !important; /* 문단 아래 여백 */
+word-break: keep-all;
 }
 
-/* 3. 인트로 박스 (미니멀) */
+/* 3. 인트로 박스 /
 .intro-container {
 background-color: #f9f9f9;
-padding: 40px;
-border-radius: 8px;
-margin-bottom: 60px;
+padding: 50px 40px;
+border-radius: 12px;
+margin-bottom: 80px; / 인트로 아래 여백 */
 text-align: center;
+border: 1px solid #eee;
 }
 
 .intro-title {
-font-size: 30px;
+font-size: 32px;
 font-weight: 800;
-margin-bottom: 16px;
+margin-bottom: 20px;
 color: #111;
 }
 
 .intro-desc {
 font-size: 18px;
 color: #666;
+line-height: 1.6;
 margin: 0;
 }
 
-/* 4. 서비스 리스트 (깔끔한 목록형) */
+/* 4. 서비스 리스트 /
 .service-list {
 list-style: none;
 padding: 0;
-margin: 0;
+margin: 0 0 40px 0; / 리스트 아래 여백 */
 }
 
 .service-item {
-margin-bottom: 12px;
-padding-left: 16px;
-border-left: 3px solid #ddd; /* 왼쪽 포인트 선 */
+margin-bottom: 16px; /* 항목 사이 여백 */
+padding-left: 20px;
+border-left: 4px solid #ddd;
 font-size: 17px;
+line-height: 1.6;
 }
 
 .service-category {
 font-weight: 700;
 color: #333;
-margin-right: 8px;
+margin-right: 10px;
+display: inline-block;
 }
 
-/* 5. 링크 스타일 (가독성 파란색) /
+/* 5. 링크 */
 a {
-color: #0366d6; / 깃허브 블루 */
+color: #0366d6;
 text-decoration: none;
 font-weight: 500;
 }
-a:hover {
-text-decoration: underline;
-}
+a:hover { text-decoration: underline; }
 
-/* 6. 기술 스택 (심플 박스) */
+/* 6. 기술 스택 (Tech Stack) - 여백 수정 */
 .tech-container {
 background: #f1f3f5;
-padding: 24px;
-border-radius: 8px;
+padding: 30px;
+border-radius: 12px;
+margin-bottom: 60px;
 }
+
 .tech-row {
-margin-bottom: 10px;
-font-size: 16px;
+margin-bottom: 20px; /* 각 줄 사이 여백 /
+font-size: 17px;
+display: flex; / 플렉스 박스로 정렬 */
+align-items: baseline;
 }
+
+.tech-row:last-child { margin-bottom: 0; }
+
 .tech-label {
 font-weight: 700;
 color: #111;
-display: inline-block;
-width: 60px;
+width: 80px; /* 라벨 너비 고정 /
+flex-shrink: 0; / 줄어들지 않게 */
 }
 
-/* 7. 글 목록 */
+.tech-content {
+color: #444;
+line-height: 1.5;
+}
+
+/* 7. 글 목록 /
 .post-list {
 list-style: none;
 padding: 0;
+margin-top: 30px;
 }
 .post-item {
-padding: 12px 0;
+padding: 16px 0;
 border-bottom: 1px solid #eee;
 font-size: 17px;
+display: flex; / 날짜와 제목 가로 정렬 /
+align-items: center;
 }
 .post-date {
 color: #888;
 font-family: monospace;
-font-size: 14px;
-margin-right: 12px;
+font-size: 15px;
+margin-right: 20px;
+min-width: 110px; / 날짜 너비 고정 */
 }
 
 /* 모바일 대응 */
 @media (max-width: 768px) {
-.wrapper { padding: 0 16px !important; }
-h1 { font-size: 28px; }
-h2.section-title { font-size: 22px; margin-top: 50px; }
-.intro-container { padding: 24px; }
+.wrapper { padding: 0 20px !important; }
+h1 { font-size: 28px; margin-top: 40px; }
+h2.section-title { font-size: 24px; margin-top: 60px; }
+.intro-container { padding: 30px 20px; }
+.tech-row { flex-direction: column; margin-bottom: 24px; }
+.tech-label { margin-bottom: 6px; }
+.post-item { flex-direction: column; align-items: flex-start; gap: 6px; }
 }
 </style>
 
@@ -169,7 +190,7 @@ h2.section-title { font-size: 22px; margin-top: 50px; }
 </div>
 
 <h2 class="section-title">🗺️ Service Architecture</h2>
-<p>
+<p style="font-size: 18px; color: #666; margin-bottom: 50px;">
 수당헬프는 단순한 계산기를 넘어,
 
 
@@ -179,7 +200,7 @@ h2.section-title { font-size: 22px; margin-top: 50px; }
 </p>
 
 <h3>1. 💵 소득 & 보장 (Income & Security)</h3>
-<p style="margin-bottom: 10px; font-size: 16px; color: #666;">국가에서 보장하는 권리와 혜택을 놓치지 않도록 돕습니다.</p>
+<p style="margin-bottom: 15px; color: #666;">국가에서 보장하는 권리와 혜택을 놓치지 않도록 돕습니다.</p>
 <ul class="service-list">
 <li class="service-item">
 <span class="service-category">출산/육아</span>
@@ -196,7 +217,7 @@ h2.section-title { font-size: 22px; margin-top: 50px; }
 </ul>
 
 <h3>2. 💸 비용 & 지출 (Expense & Spending)</h3>
-<p style="margin-bottom: 10px; font-size: 16px; color: #666;">새는 돈을 막고, 합리적인 소비를 지원하는 도구입니다.</p>
+<p style="margin-bottom: 15px; color: #666;">새는 돈을 막고, 합리적인 소비를 지원하는 도구입니다.</p>
 <ul class="service-list">
 <li class="service-item">
 <span class="service-category">여행/환전</span>
@@ -217,7 +238,7 @@ h2.section-title { font-size: 22px; margin-top: 50px; }
 </ul>
 
 <h3>3. 💰 자산 형성 (Asset Building)</h3>
-<p style="margin-bottom: 10px; font-size: 16px; color: #666;">미래를 위한 자산 증식 시뮬레이션을 제공합니다.</p>
+<p style="margin-bottom: 15px; color: #666;">미래를 위한 자산 증식 시뮬레이션을 제공합니다.</p>
 <ul class="service-list">
 <li class="service-item">
 <span class="service-category">투자 설계</span>
@@ -232,13 +253,16 @@ h2.section-title { font-size: 22px; margin-top: 50px; }
 <h2 class="section-title">🛠️ Tech Stack</h2>
 <div class="tech-container">
 <div class="tech-row">
-<span class="tech-label">Core</span> Vanilla JS (Performance), Cloudflare Workers
+<span class="tech-label">Core</span>
+<span class="tech-content">Vanilla JS (Performance), Cloudflare Workers</span>
 </div>
 <div class="tech-row">
-<span class="tech-label">PWA</span> Service Worker (Offline Support), Manifest
+<span class="tech-label">PWA</span>
+<span class="tech-content">Service Worker (Offline Support), Manifest</span>
 </div>
 <div class="tech-row">
-<span class="tech-label">SEO</span> JSON-LD, Meta Tag Optimization, Sitemap
+<span class="tech-label">SEO</span>
+<span class="tech-content">JSON-LD, Meta Tag Optimization, Sitemap</span>
 </div>
 </div>
 
