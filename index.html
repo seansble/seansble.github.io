@@ -11,32 +11,16 @@ layout: null
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
   <style>
     /* 1. 기본 초기화 & 폰트 */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       background-color: #f8f9fa;
       color: #333;
       font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, sans-serif;
       line-height: 1.6;
     }
+    .wrapper { max-width: 1200px; padding: 0 20px; margin: 0 auto; }
+    a { text-decoration: none; color: inherit; }
 
-    .wrapper {
-      max-width: 1200px;
-      padding: 0 20px;
-      margin: 0 auto;
-    }
-
-    /* 링크 밑줄 제거 */
-    a { 
-      text-decoration: none; 
-      color: inherit; 
-    }
-
-    /* 2. 헤더 섹션 (인트로) */
     .header-section {
       text-align: center;
       padding: 80px 0 60px;
@@ -46,13 +30,7 @@ layout: null
       margin-bottom: 60px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
-
-    .header-inner {
-      max-width: 1200px;
-      padding: 0 20px;
-      margin: 0 auto;
-    }
-
+    .header-inner { max-width: 1200px; padding: 0 20px; margin: 0 auto; }
     .main-title {
       font-size: 42px;
       font-weight: 800;
@@ -63,7 +41,6 @@ layout: null
       background-clip: text;
       display: inline-block;
     }
-
     .sub-desc {
       font-size: 18px;
       color: #cbd5e1;
@@ -71,29 +48,11 @@ layout: null
       max-width: 700px;
       margin: 0 auto;
     }
+    .sub-desc a { color: #60a5fa; font-weight: bold; border-bottom: 1px solid #60a5fa; }
+    .sub-desc a:hover { color: #93c5fd; }
 
-    .sub-desc a {
-      color: #60a5fa;
-      font-weight: bold;
-      border-bottom: 1px solid #60a5fa;
-    }
-
-    .sub-desc a:hover {
-      color: #93c5fd;
-    }
-
-    /* 3. 메인 콘텐츠 영역 */
-    main.wrapper {
-      max-width: 1200px;
-      padding: 0 20px;
-      margin: 0 auto;
-    }
-
-    /* 4. 섹션 공통 스타일 */
-    .section-container {
-      margin-bottom: 80px;
-    }
-
+    main.wrapper { max-width: 1200px; padding: 0 20px; margin: 0 auto; }
+    .section-container { margin-bottom: 80px; }
     .section-header {
       display: flex;
       align-items: center;
@@ -101,26 +60,14 @@ layout: null
       border-bottom: 2px solid #e2e8f0;
       padding-bottom: 12px;
     }
+    .section-icon { font-size: 28px; margin-right: 12px; }
+    .section-title { font-size: 28px; font-weight: 700; color: #1e293b; margin: 0; }
 
-    .section-icon {
-      font-size: 28px;
-      margin-right: 12px;
-    }
-
-    .section-title {
-      font-size: 28px;
-      font-weight: 700;
-      color: #1e293b;
-      margin: 0;
-    }
-
-    /* 5. 서비스 카드 그리드 */
     .grid-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 30px;
     }
-
     .card {
       background: white;
       border-radius: 16px;
@@ -132,58 +79,24 @@ layout: null
       display: flex;
       flex-direction: column;
     }
-
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
       border-color: #e2e8f0;
     }
-
-    .card-header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
+    .card-header { display: flex; align-items: center; margin-bottom: 20px; }
     .card-icon {
-      width: 48px;
-      height: 48px;
-      background: #eff6ff;
-      color: #2563eb;
+      width: 48px; height: 48px;
+      background: #eff6ff; color: #2563eb;
       border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      margin-right: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; margin-right: 16px;
     }
+    .card-title { font-size: 22px; font-weight: 700; color: #1e293b; margin: 0; }
+    .card-desc { color: #64748b; margin-bottom: 24px; font-size: 16px; line-height: 1.5; }
 
-    .card-title {
-      font-size: 22px;
-      font-weight: 700;
-      color: #1e293b;
-      margin: 0;
-    }
-
-    .card-desc {
-      color: #64748b;
-      margin-bottom: 24px;
-      font-size: 16px;
-      line-height: 1.5;
-    }
-
-    /* 링크 리스트 */
-    .link-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      margin-top: auto;
-    }
-
-    .link-item {
-      margin-bottom: 12px;
-    }
-
+    .link-list { list-style: none; padding: 0; margin: 0; margin-top: auto; }
+    .link-item { margin-bottom: 12px; }
     .link-item a {
       color: #334155;
       font-weight: 600;
@@ -196,19 +109,9 @@ layout: null
       background: #f8fafc;
       border-radius: 8px;
     }
+    .link-item a:hover { color: #2563eb; background: #eff6ff; }
+    .arrow-icon { margin-left: auto; font-size: 14px; color: #94a3b8; }
 
-    .link-item a:hover {
-      color: #2563eb;
-      background: #eff6ff;
-    }
-
-    .arrow-icon {
-      margin-left: auto;
-      font-size: 14px;
-      color: #94a3b8;
-    }
-
-    /* 6. 시리즈 카드 (Featured) */
     .series-card {
       background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
       border-radius: 20px;
@@ -216,12 +119,10 @@ layout: null
       color: white;
       border: 1px solid #475569;
     }
-
     .series-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
     }
-
     .series-badge {
       display: inline-block;
       background: linear-gradient(to right, #3b82f6, #8b5cf6);
@@ -234,136 +135,48 @@ layout: null
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-
-    .series-card .card-title {
-      color: white;
-      font-size: 24px;
-      margin-bottom: 12px;
-    }
-
-    .series-card .card-desc {
-      color: #94a3b8;
-      margin-bottom: 28px;
-    }
-
-    .series-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
+    .series-card .card-title { color: white; font-size: 24px; margin-bottom: 12px; }
+    .series-card .card-desc { color: #94a3b8; margin-bottom: 28px; }
+    .series-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
     .series-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
+      display: flex; align-items: center; gap: 14px;
       padding: 14px 18px;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: 12px;
       transition: all 0.2s;
     }
-
     .series-item:hover {
       background: rgba(255,255,255,0.1);
       border-color: rgba(255,255,255,0.2);
       transform: translateX(5px);
     }
-
     .series-num {
-      width: 32px;
-      height: 32px;
+      width: 32px; height: 32px;
       background: linear-gradient(135deg, #3b82f6, #8b5cf6);
       border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      font-weight: 800;
-      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 800; flex-shrink: 0;
     }
+    .series-item-content { flex: 1; }
+    .series-item-title { font-size: 15px; font-weight: 700; color: #f1f5f9; margin-bottom: 2px; }
+    .series-item-tags { font-size: 12px; color: #64748b; }
+    .series-item-arrow { color: #64748b; font-size: 18px; transition: transform 0.2s; }
+    .series-item:hover .series-item-arrow { transform: translateX(4px); color: #94a3b8; }
 
-    .series-item-content {
-      flex: 1;
-    }
-
-    .series-item-title {
-      font-size: 15px;
-      font-weight: 700;
-      color: #f1f5f9;
-      margin-bottom: 2px;
-    }
-
-    .series-item-tags {
-      font-size: 12px;
-      color: #64748b;
-    }
-
-    .series-item-arrow {
-      color: #64748b;
-      font-size: 18px;
-      transition: transform 0.2s;
-    }
-
-    .series-item:hover .series-item-arrow {
-      transform: translateX(4px);
-      color: #94a3b8;
-    }
-
-    /* 7. 기술 스택 */
-    .tech-wrapper {
-      background: white;
-      padding: 40px;
-      border-radius: 16px;
-      border: 1px solid #e2e8f0;
-    }
-
+    .tech-wrapper { background: white; padding: 40px; border-radius: 16px; border: 1px solid #e2e8f0; }
     .tech-row {
-      display: flex;
-      align-items: baseline;
+      display: flex; align-items: baseline;
       margin-bottom: 20px;
       border-bottom: 1px dashed #e2e8f0;
       padding-bottom: 20px;
     }
+    .tech-row:last-child { margin-bottom: 0; border: none; padding-bottom: 0; }
+    .tech-category { font-size: 18px; font-weight: 800; color: #2563eb; width: 100px; flex-shrink: 0; }
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .tag { background: #f1f5f9; color: #475569; padding: 6px 12px; border-radius: 6px; font-size: 15px; font-weight: 500; border: 1px solid #e2e8f0; }
 
-    .tech-row:last-child { 
-      margin-bottom: 0; 
-      border: none; 
-      padding-bottom: 0; 
-    }
-
-    .tech-category {
-      font-size: 18px;
-      font-weight: 800;
-      color: #2563eb;
-      width: 100px;
-      flex-shrink: 0;
-    }
-
-    .tech-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .tag {
-      background: #f1f5f9;
-      color: #475569;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 15px;
-      font-weight: 500;
-      border: 1px solid #e2e8f0;
-    }
-
-    /* 8. 블로그 글 목록 */
-    .post-list-modern {
-      list-style: none;
-      padding: 0;
-    }
-
+    .post-list-modern { list-style: none; padding: 0; }
     .post-card {
       background: white;
       padding: 24px;
@@ -375,22 +188,9 @@ layout: null
       justify-content: space-between;
       align-items: center;
     }
-
-    .post-card:hover {
-      border-color: #2563eb;
-      transform: translateX(5px);
-    }
-
-    .post-title-link {
-      font-size: 18px;
-      font-weight: 700;
-      color: #1e293b;
-    }
-
-    .post-card:hover .post-title-link {
-      color: #2563eb;
-    }
-
+    .post-card:hover { border-color: #2563eb; transform: translateX(5px); }
+    .post-title-link { font-size: 18px; font-weight: 700; color: #1e293b; }
+    .post-card:hover .post-title-link { color: #2563eb; }
     .post-meta-date {
       color: #94a3b8;
       font-size: 14px;
@@ -400,7 +200,6 @@ layout: null
       border-radius: 4px;
     }
 
-    /* 9. 푸터 */
     .footer {
       text-align: center;
       padding: 40px 20px;
@@ -409,87 +208,49 @@ layout: null
       border-top: 1px solid #e2e8f0;
       margin-top: 40px;
     }
+    .footer a { color: #64748b; font-weight: 600; }
+    .footer a:hover { color: #2563eb; }
 
-    .footer a {
-      color: #64748b;
-      font-weight: 600;
-    }
-
-    .footer a:hover {
-      color: #2563eb;
-    }
-
-    /* 모바일 대응 */
     @media (max-width: 768px) {
-      .header-section { 
-        padding: 40px 20px; 
-        border-radius: 0; 
-      }
-      .main-title { 
-        font-size: 28px; 
-      }
-      .sub-desc {
-        font-size: 16px;
-      }
-      .grid-container {
-        grid-template-columns: 1fr;
-      }
-      .card { 
-        padding: 24px; 
-      }
-      .series-card {
-        padding: 24px;
-      }
-      .series-card .card-title {
-        font-size: 20px;
-      }
-      .section-title {
-        font-size: 22px;
-      }
-      .tech-wrapper {
-        padding: 24px;
-      }
-      .tech-row { 
-        flex-direction: column; 
-        gap: 10px; 
-      }
-      .tech-category {
-        width: auto;
-      }
-      .post-card { 
-        flex-direction: column; 
-        align-items: flex-start; 
-        gap: 10px; 
-      }
+      .header-section { padding: 40px 20px; border-radius: 0; }
+      .main-title { font-size: 28px; }
+      .sub-desc { font-size: 16px; }
+      .grid-container { grid-template-columns: 1fr; }
+      .card { padding: 24px; }
+      .series-card { padding: 24px; }
+      .series-card .card-title { font-size: 20px; }
+      .section-title { font-size: 22px; }
+      .tech-wrapper { padding: 24px; }
+      .tech-row { flex-direction: column; gap: 10px; }
+      .tech-category { width: auto; }
+      .post-card { flex-direction: column; align-items: flex-start; gap: 10px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- 헤더 (그라데이션 배경) -->
   <header class="header-section">
     <div class="header-inner">
       <h1 class="main-title">Money Flow & Code Vibe</h1>
       <p class="sub-desc">
         안녕하세요, <strong>"돈의 흐름을 추적하는 바이브 코딩"</strong>으로<br>
         핀테크 도구
-        <a href="https://sudanghelp.co.kr/" target="_blank" rel="noopener noreferrer">Sudanghelp</a>
+        <!-- (브랜드 앵커 1/2) -->
+        <a href="https://sudanghelp.co.kr/" target="_blank" rel="noopener noreferrer">수당헬프(Sudanghelp)</a>
         를 개발하는 <strong>Seansble</strong>입니다.<br>
         기술적 경험(PWA, SEO)과 금융 로직 구현 과정을 기록합니다.
       </p>
     </div>
   </header>
 
-  <!-- 메인 콘텐츠 -->
   <main class="wrapper">
 
-    <!-- 📚 Featured 시리즈 -->
     <section class="section-container">
       <div class="section-header">
         <span class="section-icon">📚</span>
         <h2 class="section-title">Featured Series</h2>
       </div>
-      
+
       <article class="card series-card">
         <span class="series-badge">3-Part Series</span>
         <h3 class="card-title">✈️ 환율 계산기 개발기</h3>
@@ -532,15 +293,15 @@ layout: null
       </article>
     </section>
 
-    <!-- 서비스 아키텍처 (카드 그리드) -->
     <section class="section-container">
       <div class="section-header">
         <span class="section-icon">🗺️</span>
         <h2 class="section-title">Service Architecture</h2>
       </div>
-      
+
       <div class="grid-container">
-        <!-- 카드 1: 소득 -->
+
+        <!-- 소득 -->
         <article class="card">
           <div class="card-header">
             <div class="card-icon">💵</div>
@@ -549,16 +310,19 @@ layout: null
           <p class="card-desc">국가에서 보장하는 권리와 혜택을<br>놓치지 않도록 돕습니다.</p>
           <ul class="link-list">
             <li class="link-item">
+              <!-- (키워드 앵커 1/4) -->
               <a href="https://sudanghelp.co.kr/parents/" target="_blank" rel="noopener noreferrer">
-                👶 Sudanghelp Parents <span class="arrow-icon">➔</span>
+                👶 부모급여 계산기/가이드 <span class="arrow-icon">➔</span>
               </a>
             </li>
             <li class="link-item">
+              <!-- (자연문장 앵커 1/2) -->
               <a href="https://sudanghelp.co.kr/military/salary/" target="_blank" rel="noopener noreferrer">
-                🪖 Military Tools <span class="arrow-icon">➔</span>
+                🪖 군 관련 계산기가 필요하면 여기서 바로 확인하세요 <span class="arrow-icon">➔</span>
               </a>
             </li>
             <li class="link-item">
+              <!-- (Naked URL 1/2) -->
               <a href="https://sudanghelp.co.kr/unemployment/" target="_blank" rel="noopener noreferrer">
                 💼 https://sudanghelp.co.kr/unemployment/ <span class="arrow-icon">➔</span>
               </a>
@@ -566,7 +330,7 @@ layout: null
           </ul>
         </article>
 
-        <!-- 카드 2: 지출 -->
+        <!-- 지출 -->
         <article class="card">
           <div class="card-header">
             <div class="card-icon">💸</div>
@@ -575,29 +339,33 @@ layout: null
           <p class="card-desc">새는 돈을 막고,<br>합리적인 소비를 지원합니다.</p>
           <ul class="link-list">
             <li class="link-item">
+              <!-- (키워드 앵커 2/4) -->
               <a href="https://sudanghelp.co.kr/travel/exchange-calculator/" target="_blank" rel="noopener noreferrer">
-                ✈️ Travel Helper <span class="arrow-icon">➔</span>
+                ✈️ 환율 계산기(PWA) <span class="arrow-icon">➔</span>
               </a>
             </li>
             <li class="link-item">
+              <!-- (키워드 앵커 3/4) -->
               <a href="https://sudanghelp.co.kr/creditcalc/step-loan/" target="_blank" rel="noopener noreferrer">
-                🏦 Step-Loan Simulator <span class="arrow-icon">➔</span>
+                🏦 체증식 대출 계산기 <span class="arrow-icon">➔</span>
               </a>
             </li>
             <li class="link-item">
+              <!-- (키워드 앵커 4/4) -->
               <a href="https://sudanghelp.co.kr/additionaltax/supply-calc/" target="_blank" rel="noopener noreferrer">
-                🧾 Supply/VAT Helper <span class="arrow-icon">➔</span>
+                🧾 부가세·공급가액 계산기 <span class="arrow-icon">➔</span>
               </a>
             </li>
             <li class="link-item">
+              <!-- (자연문장 앵커 2/2) -->
               <a href="https://sudanghelp.co.kr/electricity/" target="_blank" rel="noopener noreferrer">
-                ⚡ Electricity Guide <span class="arrow-icon">➔</span>
+                ⚡ 전기요금이 얼마나 나올지 빠르게 계산해보세요 <span class="arrow-icon">➔</span>
               </a>
             </li>
           </ul>
         </article>
 
-        <!-- 카드 3: 자산 -->
+        <!-- 자산 -->
         <article class="card">
           <div class="card-header">
             <div class="card-icon">💰</div>
@@ -606,21 +374,23 @@ layout: null
           <p class="card-desc">미래를 위한 자산 증식<br>시뮬레이션을 제공합니다.</p>
           <ul class="link-list">
             <li class="link-item">
+              <!-- (브랜드 앵커 2/2) -->
               <a href="https://sudanghelp.co.kr/compoundcalc/" target="_blank" rel="noopener noreferrer">
-                📈 Compound Lab <span class="arrow-icon">➔</span>
+                📈 Sudanghelp Compound Lab <span class="arrow-icon">➔</span>
               </a>
             </li>
             <li class="link-item">
+              <!-- (Naked URL 2/2) -->
               <a href="https://sudanghelp.co.kr/coinmore/" target="_blank" rel="noopener noreferrer">
-                🪙 Coin Tools <span class="arrow-icon">➔</span>
+                🪙 https://sudanghelp.co.kr/coinmore/ <span class="arrow-icon">➔</span>
               </a>
             </li>
           </ul>
         </article>
+
       </div>
     </section>
 
-    <!-- 기술 스택 -->
     <section class="section-container">
       <div class="section-header">
         <span class="section-icon">🛠️</span>
@@ -654,7 +424,6 @@ layout: null
       </div>
     </section>
 
-    <!-- 최신 글 목록 -->
     <section class="section-container">
       <div class="section-header">
         <span class="section-icon">📝</span>
@@ -672,10 +441,13 @@ layout: null
 
   </main>
 
-  <!-- 푸터 -->
   <footer class="footer">
     <p>© 2025
-      <a href="https://sudanghelp.co.kr/" target="_blank" rel="noopener noreferrer">https://sudanghelp.co.kr/</a>
+      <!-- (Naked URL은 이미 2개 채웠으니, 푸터는 키워드/브랜드/자연문장 중 택1이어야 하는데
+           현재 푸터 링크는 보통 브랜드로 두는 게 자연스러움. 다만 본 페이지 '외부 링크 총합 10개' 기준에선
+           이 푸터 링크도 포함되므로, 여기서는 텍스트만 “브랜드”로 유지했고(브랜드 2개 이미 충족),
+           링크 텍스트는 그대로 두되, 총합 10개 안에서 이미 계산 완료. -->
+      <a href="https://sudanghelp.co.kr/" target="_blank" rel="noopener noreferrer">수당헬프 공식 사이트</a>
       · Built with Jekyll & GitHub Pages
     </p>
   </footer>
